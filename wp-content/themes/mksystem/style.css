@@ -1,0 +1,362 @@
+/*
+Theme Name: MK System
+Theme URI: http://mksystemsoft.com/
+Author: Julio Maturrano
+Author URI: 
+Template: dazzling
+Version: 0.1
+Tags: black, gray, red, white, one-column, two-columns, right-sidebar,fixed-layout,light,front-page-post-form,full-width-template,rtl-language-support,sticky-post,theme-options,responsive-layout, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, photoblogging, accessibility-ready
+Text Domain: mksystem
+This Theme is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import url('../dazzling/style.css');
+/*
+Aquí empieza la personalización del tema
+---------------------------------------------------------------------------------
+*/
+body{
+  background-color: #f3f3f3;
+}
+ul#menu-principal > li{
+  margin: 0 5px;
+}
+ul#menu-principal > li > a{
+  font-weight: 600;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-transform: uppercase;
+}
+.header-rigth ul.navbar-nav > li > a{
+  padding: 10px 7px;
+}
+.social-icon{
+  border-radius: 50%;
+  margin: 0 3px;
+  width: 52px;
+}
+.header-rigth #menu-secundario.nav-header a:hover{
+  background: transparent !important;
+}
+.header-rigth > ul{
+  padding: 15px 0;
+}
+.nav-search{
+  padding-right: 0;
+}
+.navbar-mksystem{
+  margin: 0 !important;
+}
+.flex-control-paging li a{
+  background: #cdcdcd;
+}
+.flex-control-paging li a.flex-active{
+  background: #fff;
+}
+.flex-prev:hover, 
+.flex-next:hover{
+  color: #fff;
+}
+.flex-caption{
+  top: 0;
+}
+.category-product a{
+  background: #292929;
+  border-top: 1px solid #000;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 300ms ease 0s;
+  padding: 10px 35px 10px 25px !important;
+}
+.category-product a:hover, 
+.category-product a:active{
+  background: #3f3f3f !important;
+}
+.subcategory-product{
+  display: none;
+}
+.icon-subcategory{
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 35%;
+  z-index: 1;
+}
+.subcategory-product a{
+  background: #3f3f3f;
+  padding-left: 40px !important;
+}
+.category-product-list{
+  background: #292929;
+  color: #fff;
+  margin: 0;
+  padding: 10px 35px 10px 25px;
+  text-transform: uppercase;
+}
+.banners_wrapper .banner-wrap{
+  background: #000;
+  display: block;
+  margin: 0;
+  position: relative;
+}
+body #motopress-main.main-holder .content-holder a:hover, 
+body #motopress-main.main-holder .content-holder a:focus, 
+body #motopress-holder a:focus, 
+body #motopress-main.main-holder .content-holder a:active{ 
+  color: #ffc700; text-decoration: none;
+}
+.banners_wrapper .banner-wrap.right-image .banner_content{
+  /*float: left;*/
+}
+.banners_wrapper .banner-wrap .banner_content{
+  background: #000;
+  box-sizing: border-box;
+  display: inline-block;
+  max-height: 282px;
+  padding: 19px 10px 21px 25px;
+  width: 50%;
+}
+.banners_wrapper .banner-wrap .banner_content h5{
+  color: #fff;
+  font: 100 60px/60px Lato;
+  margin-bottom: -19px;
+  text-transform: uppercase;
+  transition: all 300ms ease 0s;
+}
+.banners_wrapper .banner-wrap .banner_content h4{
+  color: #ffc700;
+  font: 700 70px/70px Lato;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  transition: all 300ms ease 0s;
+}
+.banners_wrapper .banner-wrap .banner_content p {
+  color: #fff;
+  transition: all 300ms ease 0s;
+}
+.banners_wrapper .banner-wrap.right-image .featured-thumbnail {
+  float: right;
+}
+.banners_wrapper .banner-wrap .featured-thumbnail {
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  width: 50%;
+}
+.featured-thumbnail{
+  position: relative;
+}
+.banner-wrap .featured-thumbnail {
+  background-image: none;
+  border: medium none;
+  box-shadow: none;
+  overflow: hidden;
+  padding: 0;
+}
+.banners_wrapper .banner-wrap .featured-thumbnail img{
+  transition: all 300ms ease 0s;
+}
+.banner_content p{
+  font-size: 12px;
+}
+.banners_wrapper .banner-wrap.left-image .featured-thumbnail{
+  /*float: left;*/
+}
+.banners_wrapper .banner-wrap.left-image .banner_content{
+  float: right;
+}
+.banners_wrapper .banner-wrap:hover .featured-thumbnail img{
+  transform: scale(1.2);
+}
+.banners_wrapper .banner-wrap:hover .banner_content h5{ color: #ffc700; }
+.banners_wrapper .banner-wrap:hover .banner_content h4{ color: #fff; }
+.banners_wrapper .banner-wrap:hover .banner_content p{ color: #ffc700; }
+.banners_wrapper .banners_wrapper_wrap_inner .banner-wrap{
+  max-height: 282px;
+}
+
+.featured-products_wrapper h2{
+  color: #fff;
+  background: #292929 none repeat scroll 0 0;
+  font: 100 34px/34px Lato;
+  margin-bottom: 29px;
+  padding: 16px 30px 17px;
+  text-transform: uppercase;
+}
+#content{
+  margin-bottom: 0;
+}
+.btn-theme{
+  background-color: #292929;
+  border-color: #292929;
+}
+.navbar-default .navbar-nav > li > a.social-icon{
+  color: #000;
+}
+.flex-caption > a{
+  display: block;
+  float: right;
+  text-align: right;
+}
+.flex-caption h2{
+  background: transparent;
+  font: 100 80px/80px Lato;
+}
+.flex-caption .excerpt{
+  background: transparent;
+}
+ul.products > li{
+  background: #fff;
+  padding: 15px !important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+  color: #000;
+}
+.cfa-text{
+  color: #292929;
+  font-family: Lato;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+#sm_form input[type="text"].sm_field, 
+#sm_top, 
+#sm_content p{
+  display: none;
+}
+#sm_footer, 
+#sm_content{
+  background: transparent !important;
+  border-bottom: 0 none !important;
+}
+.sm_field{
+  background-color: #292929 !important;
+  border: 0 none !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  padding: 5px 10px !important;
+}
+.sm_submit, #sm_submit{
+  background-color: #292929 !important;
+  border-radius: 0;
+  padding: 5px 25px !important;
+  vertical-align: top;
+}
+#sm_wrapper{
+  padding-top: 10px !important;
+}
+.content-map{
+  position: relative;
+}
+.mask-map{
+  background: #000;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+}
+.content-map-text{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 2;
+}
+.content-map-text h4{
+  color: #fff;
+  font: 700 30px/30px Lato;
+  text-transform: uppercase;
+}
+.content-map-text span{
+  color: #fff;
+  font: 700 16px/16px Lato;
+}
+#footer-area ul li
+{
+  border-bottom: 0 none;
+  display: block;
+}
+#footer-area a:hover{
+  font-weight: 600;
+}
+.footer_text-wrapper{
+  padding: 0 60px;
+}
+.footer_social-wrapper ul li{
+  display: inline-block !important;
+}
+.footer_social-wrapper a{
+  color: #000 !important;
+  font-size: 14px;
+}
+#colophon{
+  padding: 20px 0;
+}
+.copyright{
+  float: none;
+  text-align: left;
+}
+.cfa {
+  padding: 15px 0 0 !important;
+}
+
+/*  Media queries */
+
+@media screen and (max-width: 1024px){
+  ul#menu-principal > li > a {
+    padding-left: 6px;
+    padding-right: 13px;
+  }
+
+  .banner_content h4 {
+    font: 60px/46px Lato;
+  }
+  .banner_content {
+    padding: 15px !important;
+  }
+
+  /*.banner_content h5 {*/
+  .banners_wrapper .banner-wrap .banner_content h5{
+    font: 100 45px/60px Lato ;
+  }
+  .header-page {
+    padding: 9px 35px 18px 0;
+  }
+  .col-md-12 {
+    width: 104%;
+  }
+  .category-product-list {
+    padding: 11px 35px 10px 19px;
+  }
+  .social-icon {
+    border-radius: 100%;
+  }
+}
+
+
+
+@media screen and (max-width: 768px){
+
+  .social-icon {
+    width: 47px ;
+  }
+  ul#menu-principal > li > a {
+    padding-left: 0px!important;
+    padding-right: 13px;
+  }
+  .banners_wrapper .banner-wrap .banner_content h5{
+    font: 100 47px/37px Lato;
+  }
+  #footer-area {
+    font-size: 11px;
+  }
+  .navbar-nav > li {
+    margin: 0 0px;
+  }
+  .social-icon {
+    width: 39px;
+  }
+  .navbar-nav > li > a {
+    line-height: 9px;
+  }
+}
