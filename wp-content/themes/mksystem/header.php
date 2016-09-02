@@ -69,7 +69,7 @@
 	<nav id="header_nav" class="navbar navbar-mksystem" role="navigation">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-2 col-sm-2 col-xs-12">
 				
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 			    <span class="sr-only"><?php _e( 'Toggle navigation', 'dazzling' ); ?></span>
@@ -99,7 +99,7 @@
 				<?php endif; // header image was removed (again) ?>
 
 			</div>
-				<div class="col-md-10">
+				<div class="col-md-10 col-sm-10 col-xs-12">
 					<?php mksystem_header_menu(); ?>	
 				</div>
 			</div>
