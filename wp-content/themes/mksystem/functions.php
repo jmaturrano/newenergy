@@ -469,3 +469,31 @@ function mksystem_footer_info() {
 
 <?php
 }
+/*
+*
+* Renombrando los tabs de productos
+*
+*/
+function woo_rename_tabs( $tabs ) {
+
+  $tabs['description']['title'] = __( 'Descripción' );    // Rename the description tab
+  $tabs['reviews']['title'] = __( 'Comentarios' );        // Rename the reviews tab
+  // $tabs['additional_information']['title'] = __( 'Product Data' ); // Rename the additional information tab
+  return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
+/*
+*
+* Cambio de orden de los elementos en la ficha de producto de WooCommerce
+*
+*/
+
+  remove_action( 'woocommerce_single_product_summary',
+            'woocommerce_output_product_data_tabs', 50 );
+    add_action( 'woocommerce_single_product_summary',
+            'woocommerce_output_product_data_tabs', 30 );
+ remove_action( 'woocommerce_single_product_summary',
+            'woocommerce_template_single_add_to_cart', 30 );
+    add_action( 'woocommerce_single_product_summary',
+            'woocommerce_template_single_add_to_cart', 15 );
+
