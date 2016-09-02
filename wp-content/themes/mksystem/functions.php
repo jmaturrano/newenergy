@@ -482,6 +482,8 @@ function woo_rename_tabs( $tabs ) {
   return $tabs;
 }
 add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
+
+
 /*
 *
 * Cambio de orden de los elementos en la ficha de producto de WooCommerce
