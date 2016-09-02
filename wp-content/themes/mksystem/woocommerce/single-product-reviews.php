@@ -32,7 +32,7 @@ if ( ! comments_open() ) {
 			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) )
 				printf( _n( '%s review for %s%s%s', '%s reviews for %s%s%s', $count, 'woocommerce' ), $count, '<span>', get_the_title(), '</span>' );
 			else
-				_e( 'Reviews', 'woocommerce' );
+				_e( 'Comentarios', 'woocommerce' );
 		?></h2>
 
 		<?php if ( have_comments() ) : ?>

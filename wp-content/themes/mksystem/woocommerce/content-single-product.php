@@ -66,8 +66,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 	</div><!-- .summary -->
+	<div class="newenergy col-md-12">
 
-	<?php
+	<?php 
+
 		/**
 		 * woocommerce_after_single_product_summary hook.
 		 *
@@ -77,9 +79,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 */
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
-
+	</div>
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
 </div><!-- #product-<?php the_ID(); ?> -->
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+
+<!-- <style>.gerberth .woocommerce-tabs {display: none;}</style> -->
