@@ -299,6 +299,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .cfa {
   padding: 15px 0 0 !important;
 }
+  .navbar-mksystem #logo a:hover,
+    .navbar-mksystem #logo a:active{
+      background-color: transparent !important;
+      color: #fff;
+  }
 
 /*  Media queries */
 
@@ -320,10 +325,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     font: 100 45px/60px Lato ;
   }
   .header-page {
-    padding: 9px 35px 18px 0;
+    padding:  10px 9px !important;
   }
   .col-md-12 {
-    width: 104%;
+    width: 100%;
   }
   .category-product-list {
     padding: 11px 35px 10px 19px;
@@ -343,6 +348,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   ul#menu-principal > li > a {
     padding-left: 0px!important;
     padding-right: 13px;
+    text-align: center;
   }
   .banners_wrapper .banner-wrap .banner_content h5{
     font: 100 47px/37px Lato;
@@ -359,22 +365,82 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .navbar-nav > li > a {
     line-height: 9px;
   }
+  #logo img{
+    max-width: 120px;
+  }
+  .woo-menu-cart{
+    display: none !important;
+  }
+  .navbar-nav > li > a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding: 10px;
+}
+}
+
+
+/* cambios iniciales de desarrollooo 1*/
+@media screen and (max-width: 736px){
+  .navbar-toggle {
+    border: 1px solid #888 ;
+  }
+  .icon-bar {
+    background-color: #888 ;
+  }
+  .navbar-nav > li > a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  .social-icon {
+    width: 45px;
+  }
+
 }
 
 
 /* cambios iniciales de desarrollo 1*/
 @media screen and (max-width: 600px){
   .navbar-toggle {
-    border: 1px solid #888;
+    border: 1px solid #888 ;
   }
   .icon-bar {
-    background-color: #888;
+    background-color: #888 ;
+  }
+  .footer-inner > div > div {
+    padding-bottom: 50px !important;
+  }
+  .navbar-nav > li > a {
+    padding-bottom: 15px;
+   padding-top: 15px;
+  }
+  .social-icon {
+    width: 45px;
+}
+
+}
+
+
+@media screen and (max-width: 384px){
+  .navbar-toggle {
+    border: 1px solid #888 ;
+  }
+  .icon-bar {
+    background-color: #888 ;
   }
 }
 
-
-
-/* cambios iniciales de desarrollooo 2*/
-@media screen and (max-width: 500px){
-  
+@media screen and (max-width: 320px){
+  .social-icon {
+      margin: 1px 2px;
+    width: 40px; 
+  }
+  .navbar-nav > li > a {
+      padding-bottom: 11px;
+    padding-top: 11px;
+  }
+  .footer-inner .col-md-2.col-sm-2.col-xs-4,
+  .footer-inner .col-md-3.col-sm-3.col-xs-4{
+    display: none;
+  }
 }
+
