@@ -70,7 +70,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
-				
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 			    <span class="sr-only"><?php _e( 'Toggle navigation', 'dazzling' ); ?></span>
 			    <span class="icon-bar"></span>

@@ -360,3 +360,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     line-height: 9px;
   }
 }
+
+@media screen and (max-width: 600px){
+  /* hola*/
+}
