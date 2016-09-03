@@ -350,12 +350,17 @@ function mksystem_product_categories(){
   $subcategory = array();
   foreach ($all_categories as $cat) {
     if($cat->category_parent == 0) {
+
+      $term_link = get_term_link($cat, 'product_cat');
+
       $category_products[$cat->term_id]['id'] = $cat->term_id;
       $category_products[$cat->term_id]['name'] = $cat->name;
       $category_products[$cat->term_id]['slug'] = $cat->slug;
       $category_products[$cat->term_id]['taxonomy'] = $cat->taxonomy;
       $category_products[$cat->term_id]['count'] = $cat->count;
       $category_products[$cat->term_id]['description'] = $cat->description;
+      $category_products[$cat->term_id]['term_link'] = $term_link;
+
       $category_products[$cat->term_id]['childs'] = array();
 
       $category_id = $cat->term_id;
@@ -377,16 +382,20 @@ function mksystem_product_categories(){
   }//end foreach
 
   if(count($subcategory) > 0){
-  $i = 0;
-  foreach ($subcategory as $subcat) {
-    $category_products[$subcat->parent]['childs'][$i]['id'] = $subcat->term_id;
-    $category_products[$subcat->parent]['childs'][$i]['name'] = $subcat->name;
-    $category_products[$subcat->parent]['childs'][$i]['slug'] = $subcat->slug;
-    $category_products[$subcat->parent]['childs'][$i]['taxonomy'] = $subcat->taxonomy;
-    $category_products[$subcat->parent]['childs'][$i]['count'] = $subcat->count;
-    $category_products[$subcat->parent]['childs'][$i]['description'] = $subcat->description;
-    $i++;
-  }//end foreach
+    $i = 0;
+    foreach ($subcategory as $subcat) {
+
+      $term_link = get_term_link($subcat, 'product_cat');
+
+      $category_products[$subcat->parent]['childs'][$i]['id'] = $subcat->term_id;
+      $category_products[$subcat->parent]['childs'][$i]['name'] = $subcat->name;
+      $category_products[$subcat->parent]['childs'][$i]['slug'] = $subcat->slug;
+      $category_products[$subcat->parent]['childs'][$i]['taxonomy'] = $subcat->taxonomy;
+      $category_products[$subcat->parent]['childs'][$i]['count'] = $subcat->count;
+      $category_products[$subcat->parent]['childs'][$i]['description'] = $subcat->description;
+      $category_products[$subcat->parent]['childs'][$i]['term_link'] = $term_link;
+      $i++;
+    }//end foreach
   }//end if
   
   return $category_products;
@@ -403,11 +412,12 @@ function mksystem_categories_list_html(){
     $categories_html .= '<ul class="category-product nav">';
     foreach ($category_products as $category) {
       $span = (count($category['childs'])>0) ? '<span class="icon-subcategory glyphicon glyphicon-plus"></span>' : '';
-      $categories_html .= '<li>'.$span.'<a href="'.home_url('/product-category/'.$category['slug']).'">'.$category['name'].'</a></li>';
+      $categories_html .= '<li>'.$span.'<a href="'.$category['term_link'].'">'.$category['name'].'</a></li>';
       if(count($category['childs']) > 0){
         $categories_html .= '<ul class="subcategory-product nav">';
         foreach ($category['childs'] as $subcategory) {
-          $categories_html .= '<li><a href="'.home_url('/product-category/'.$subcategory['slug']).'"> > '.$subcategory['name'].'</li>';
+          // $categories_html .= '<li><a href="'.home_url('/product-category/'.$subcategory['slug']).'"> > '.$subcategory['name'].'</li>';
+          $categories_html .= '<li><a href="'.$subcategory['term_link'].'"> > '.$subcategory['name'].'</li>';
         }//end foreach
         $categories_html .= '</ul>';
       }//end fi
@@ -459,3 +469,33 @@ function mksystem_footer_info() {
 
 <?php
 }
+/*
+*
+* Renombrando los tabs de productos
+*
+*/
+function woo_rename_tabs( $tabs ) {
+
+  $tabs['description']['title'] = __( 'Descripción' );    // Rename the description tab
+  $tabs['reviews']['title'] = __( 'Comentarios' );        // Rename the reviews tab
+  // $tabs['additional_information']['title'] = __( 'Product Data' ); // Rename the additional information tab
+  return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
+
+
+/*
+*
+* Cambio de orden de los elementos en la ficha de producto de WooCommerce
+*
+*/
+
+  remove_action( 'woocommerce_single_product_summary',
+            'woocommerce_output_product_data_tabs', 50 );
+    add_action( 'woocommerce_single_product_summary',
+            'woocommerce_output_product_data_tabs', 30 );
+ remove_action( 'woocommerce_single_product_summary',
+            'woocommerce_template_single_add_to_cart', 30 );
+    add_action( 'woocommerce_single_product_summary',
+            'woocommerce_template_single_add_to_cart', 15 );
+

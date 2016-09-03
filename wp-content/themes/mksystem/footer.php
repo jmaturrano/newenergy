@@ -14,19 +14,19 @@
 	<div id="footer-area">
 		<div class="footer-inner">
 			<div class="container">
-				<div class="col-md-2 col-sm-2 col-xs-6">
+				<div class="col-md-2 col-sm-2 col-xs-4">
 					<?php mksystem_footer_menu(); ?>
 				</div>
 
-				<div class="col-md-2 col-sm-2 col-xs-6">
+				<div class="col-md-2 col-sm-2 col-xs-4">
 					<?php mksystem_secondary_menu_footer(); ?>
 				</div>
 
-				<div class="col-md-3  col-sm-3 col-xs-6">
+				<div class="col-md-3  col-sm-3 col-xs-4">
 					<?php mksystem_categories_list_footer(); ?>
 				</div>
 
-				<nav role="navigation" class="col-md-5 col-sm-5 col-xs-6">
+				<nav role="navigation" class="col-md-5 col-sm-5 col-xs-12">
 
 					<div class="footer_logo-wrapper text-center">
 						<?php if( get_header_image() != '' ) : ?>

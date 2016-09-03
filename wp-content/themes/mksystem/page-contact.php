@@ -1,20 +1,17 @@
 <?php
 /**
- * The template for displaying all pages.
+ * Template Name: Pagina Contacto
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This is the template that displays full width page without sidebar
  *
- * @package dazzling
+ * @package Mksystem
  */
 
 get_header('page'); ?>
 <div class="container main-content-area">
 	<div class="row">
 
-		<div id="primary" class="content-area col-sm-12 col-md-12">
+		<div id="primary" class="content-area col-sm-12 col-md-4">
 			<main id="main" class="site-main" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -32,6 +29,10 @@ get_header('page'); ?>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
+		<div id="primary" class="content-area col-sm-12 col-md-8">
+			<iframe height="600" frameborder="0" width="1900" allowfullscreen="" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487.7248070129628!2d-77.02572674433324!3d-12.057383792513283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8bb99e2a257%3A0xb54d58529039b79f!2zSmlyw7NuIFBhcnVybywgTGltYSwgUGVyw7o!5e0!3m2!1ses!2ses!4v1472138471590"></iframe>
+
+		</div>
 	</div><!-- .row -->
 </div><!-- .container -->
 

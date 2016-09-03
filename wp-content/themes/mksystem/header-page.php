@@ -26,6 +26,7 @@
 		<div class="container">
 		<div class="col-md-12 text-center"> <span style="color:#fff;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </span>
   </div>
+
 			<div class="navbar-header" style="display: none">
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 			    <span class="sr-only"><?php _e( 'Toggle navigation', 'dazzling' ); ?></span>
@@ -69,7 +70,13 @@
 	<nav id="header_nav" class="navbar navbar-mksystem" role="navigation">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-2 col-sm-2 col-xs-12">
+				<button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+			    <span class="sr-only"><?php _e( 'Toggle navigation', 'dazzling' ); ?></span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			  </button>
 				<?php if( get_header_image() != '' ) : ?>
 
 					<div id="logo">

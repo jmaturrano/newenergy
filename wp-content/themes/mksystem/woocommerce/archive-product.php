@@ -49,7 +49,7 @@ get_header( 'shop' ); ?>
 		?>
 
 		<?php if ( have_posts() ) : ?>
-
+			
 			<?php
 				/**
 				 * woocommerce_before_shop_loop hook.
@@ -102,7 +102,7 @@ get_header( 'shop' ); ?>
 		 *
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
-		do_action( 'woocommerce_sidebar' );
+		// do_action( 'woocommerce_sidebar' );
 	?>
 
 <?php get_footer( 'shop' ); ?>
