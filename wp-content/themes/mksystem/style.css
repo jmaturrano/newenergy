@@ -299,11 +299,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .cfa {
   padding: 15px 0 0 !important;
 }
-  .navbar-mksystem #logo a:hover,
-    .navbar-mksystem #logo a:active{
-      background-color: transparent !important;
-      color: #fff;
-  }
+.navbar-mksystem #logo a:hover,
+  .navbar-mksystem #logo a:active{
+    background-color: transparent !important;
+    color: #fff;
+}
+.newenergy .woocommerce-tabs
+{
+  display: none;
+}
+.entry-meta
+{
+  display: none;
+}
+
 
 /*  Media queries */
 
@@ -316,8 +325,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .banner_content h4 {
     font: 60px/46px Lato;
   }
-  .banner_content {
-    padding: 15px !important;
+  .banners_wrapper .banner-wrap .banner_content {
+    padding: 15px;
   }
 
   /*.banner_content h5 {*/
@@ -365,26 +374,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .navbar-nav > li > a {
     line-height: 9px;
   }
-<<<<<<< HEAD
-}
 
-@media screen and (max-width: 600px){
-  /* hola*/
 }
-=======
-  #logo img{
-    max-width: 120px;
-  }
-  .woo-menu-cart{
-    display: none !important;
-  }
-  .navbar-nav > li > a {
-    padding-bottom: 15px;
-    padding-top: 15px;
-    padding: 10px;
-}
-}
-
 
 /* cambios iniciales de desarrollooo 1*/
 @media screen and (max-width: 736px){
@@ -400,6 +391,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
   .social-icon {
     width: 45px;
+  }
+  .banner_content {
+    padding: 7px !important;
   }
 
 }
@@ -422,10 +416,39 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
   .social-icon {
     width: 45px;
-}
+  }
+  .banner_content h5 {
+      font: 100 28px/24px Lato!important;;
+  }
+
+  .banner_content h4 {
+     
+      font: 700 50px/70px Lato!important;;
+  }
+
+  .banner_content {
+      padding: 9px !important;
+  }
+  #logo img{
+      max-width: 120px;
+  }
+  .woo-menu-cart{
+    display: none !important;
+  }
+  .navbar-nav > li > a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding: 10px;
+  }
 
 }
 
+@media screen and (max-width: 414px){
+  .banners_wrapper {
+    display: none;
+  }
+
+}
 
 @media screen and (max-width: 384px){
   .navbar-toggle {
@@ -433,6 +456,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
   .icon-bar {
     background-color: #888 ;
+  }
+  .banner_content p {
+    font-size: 8px !important;;
+  }
+  .banner_content h4 {
+    font: 700 29px/35px Lato !important;
+  }
+  .banner_content h5 {
+    font: 100 21px/22px Lato !important;
+  }
+  .banner_content {
+    padding: 2px !important;
+  }
+  .navbar-nav > li > a {
+    line-height: 24px !important;
   }
 }
 
@@ -449,17 +487,43 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .footer-inner .col-md-3.col-sm-3.col-xs-4{
     display: none;
   }
+  .header-page {
+    display: none;
+  }
+
+  .banners_wrapper {
+    display: none;
+  }
+}
+@media screen and (max-width: 240px){
+  .category-product-list {
+    padding: 7px 27px 6px 10px;
+  }
+  .featured-products_wrapper h2 {
+    font: 100 24px/32px Lato!important;
+    padding: 13px 21px 17px!important;
+  }
+  #sm_wrapper {
+    border-radius: 5px!important;
+    margin: 0 auto!important;
+    min-width: 165px!important;
+    padding: 5px!important;
+    width: 100%!important;
+  /*.middle-section .sm_wrapper{ 
+    max-width: 100%!important;
+    min-width: 5px!important;
+    margin: 5px 0 0 !important;
+    width: 100%!important;
+  }
+  .middle-section .sm_wrapper .sm_form {
+    max-width: 100%!important;
+  }
+  .middle-section .sm_wrapper .sm_input{
+
+  }*/
+  }
 }
 
 
-.newenergy .woocommerce-tabs
-{
-  display: none;
-}
-.entry-meta
-{
-  display: none;
-}
 
 
->>>>>>> 627acfe2179097e00e388c068c3e2a6f4bb1a7e4
