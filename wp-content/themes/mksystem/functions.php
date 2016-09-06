@@ -174,7 +174,8 @@ function mksystem_header_styles() {
 ?>
   <style type="text/css">
     .navbar-mksystem{
-      background: #FFC700; 
+      /*background: #FFC700; */
+      background: <?php echo get_theme_mod('color_mksystem_theme'); ?>;
     }
     .navbar-mksystem a{
       color: #000; 
@@ -188,7 +189,8 @@ function mksystem_header_styles() {
       background: #fff;
     }
     .header-page{
-      background: url('http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/header-background.png');
+      /*background: url('http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/header-background.png');*/
+      background: url("<?php echo get_template_directory_child().'/inc/img/background/header-background.png'; ?>");
       border-bottom: 0 none !important;
       padding: 10px 0;
     }
@@ -251,7 +253,7 @@ function mksystem_header_styles() {
       color: #000;
     }
     .main-content-area{
-      background: #fff;
+      background: <?php echo get_theme_mod('color_mksystem_fondo'); ?>;
     }
   </style>
 <?php
@@ -509,3 +511,64 @@ add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
     add_action( 'woocommerce_single_product_summary',
             'woocommerce_template_single_add_to_cart', 15 );
 
+/*
+*
+* customizer 
+*
+*/
+
+function mksystem_customizer_register( $wp_customize ) {
+
+  /*
+  *
+  * Cambios de tema
+  *
+  */
+  $wp_customize->add_setting('color_mksystem_theme',array(
+    'default' => '#FFD800',
+    'transport' => 'refresh'
+  ));
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_theme', array(
+    'label'        => __( 'Color del tema <style>#accordion-section-dazzling_important_links, #accordion-section-dazzling_layout_options, #accordion-section-dazzling_action_options, #accordion-section-dazzling_typography_options, #accordion-section-dazzling_header_options, #accordion-section-dazzling_footer_options, #accordion-section-dazzling_social_options, #accordion-section-dazzling_other_options, #customize-control-header_textcolor, #customize-control-background_color{display:none !important;}</style>', 'mksystem' ),
+    'section'    => 'colors',
+    'settings'   => 'color_mksystem_theme',
+  )));
+
+  /*
+  *
+  * Cambios de fondo
+  */
+  $wp_customize->add_setting('color_mksystem_fondo',array(
+    'default' => '#FFF',
+    'transport' => 'refresh'
+  ));
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_fondo', array(
+    'label'        => __( 'Color del Fondo <style> #customize-control-color_mksystem_cabecera, #accordion-section-background_image{display:none !important;}</style>', 'mksystem' ),
+    'section'    => 'colors',
+    'settings'   => 'color_mksystem_fondo',
+  )));
+
+   /*
+  *
+  * Imagen de cabecera y pie de pagina
+  */
+  $wp_customize->add_setting('imagen_mksystem_pie_pagina',array(
+    'default' => get_template_directory_child().'http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/cropped-logo-1.png'
+  ));
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'imagen_mksystem_pie_pagina' , array(
+    'label' => __('Pie de página' , 'mksystem'),
+    'section' => 'header_image',
+    'settings' => 'imagen_mksystem_pie_pagina'
+  )));
+
+
+
+  // $wp_customize->remove_section('dazzling_important_links');
+  // $wp_customize->remove_panel('widgets');
+    
+}
+
+
+ add_action('customize_register','mksystem_customizer_register');

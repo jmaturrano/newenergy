@@ -412,7 +412,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
 
 }
+@media screen and (max-width: 667px){
+  .banner_content h4 {
+    font: 700 42px/53px Lato!important;
+  }
+  .banner_content h5 {
+    font: 100 43px/37px Lato!important;
+  }
+  .banner_content {
+    padding: 4px !important;
+  }
 
+}
 
 /* cambios iniciales de desarrollo 1*/
 @media screen and (max-width: 667px){
@@ -461,10 +472,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
 
 }
+@media screen and (max-width: 568px){
+  .banner_content {
+    padding: 4px !important;
+  }
+  .footer_social-wrapper a {
+    font-size: 18px;
+  }
+
+}
 
 @media screen and (max-width: 414px){
   .banners_wrapper {
     display: none;
+  }
+  .footer_social-wrapper a {
+    color: #000 !important;
+    font-size: 17px;
   }
 
 }

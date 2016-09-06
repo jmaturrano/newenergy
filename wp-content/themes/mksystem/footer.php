@@ -28,12 +28,11 @@
 					<nav role="navigation" class="col-md-5 col-sm-5 col-xs-12">
 
 						<div class="footer_logo-wrapper text-center">
-							<?php if( get_header_image() != '' ) : ?>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>"  height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
-							<?php endif; // header image was removed ?>
-							<?php if( !get_header_image() ) : ?>
-								<span class="site-title"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-							<?php endif; ?>
+							<?php if(get_theme_mod('imagen_mksystem_pie_pagina','')!=''){ ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_theme_mod('imagen_mksystem_pie_pagina'); ?>"  height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo( 'name' ); ?>"/></a>
+							<?php } else { ?>
+							<span class="site-title"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+							<?php } ?>
 						</div>
 						<div class="footer_text-wrapper text-justify">
 				            <?php $description = get_bloginfo( 'description', 'display' );
