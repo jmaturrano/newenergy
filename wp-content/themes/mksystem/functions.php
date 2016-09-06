@@ -253,7 +253,7 @@ function mksystem_header_styles() {
       color: #000;
     }
     .main-content-area{
-      background: #fff;
+      background: <?php echo get_theme_mod('color_mksystem_fondo'); ?>;
     }
   </style>
 <?php
@@ -539,15 +539,15 @@ function mksystem_customizer_register( $wp_customize ) {
   *
   * Cambios de cabecera
   */
-  $wp_customize->add_setting('color_mksystem_cabecera',array(
-    'default' => '#1A1A1A',
+  $wp_customize->add_setting('color_mksystem_fondo',array(
+    'default' => '#FFF',
     'transport' => 'refresh'
   ));
   $wp_customize->add_control(
-    new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_cabecera', array(
-    'label'        => __( 'Color del cabecera', 'mksystem' ),
+    new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_fondo', array(
+    'label'        => __( 'Color del Fondo <style> #customize-control-color_mksystem_cabecera{display:none !important;}</style>', 'mksystem' ),
     'section'    => 'colors',
-    'settings'   => 'color_mksystem_cabecera',
+    'settings'   => 'color_mksystem_fondo',
   )));
 
 
