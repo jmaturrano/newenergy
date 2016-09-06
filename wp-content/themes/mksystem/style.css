@@ -188,10 +188,6 @@ body #motopress-main.main-holder .content-holder a:active{
 #content{
   margin-bottom: 0;
 }
-.btn-theme{
-  background-color: #292929;
-  border-color: #292929;
-}
 .navbar-default .navbar-nav > li > a.social-icon{
   color: #000;
 }
@@ -270,6 +266,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .content-map-text span{
   color: #fff;
   font: 700 16px/16px Lato;
+}
+#footer-area{
+  background: transparent;
 }
 #footer-area ul li
 {

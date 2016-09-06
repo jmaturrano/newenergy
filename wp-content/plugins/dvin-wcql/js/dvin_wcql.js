@@ -88,6 +88,7 @@ jQuery( function( $ ) {
         }
 
 		//check if element(widget DIV) exists and no redirect...need refresh
+        console.log(dvin_quotelist_refresh_afteradd_url);
 		if(dvin_quotelist_refresh_afteradd_url !='') {
 			data['widget_refresh'] = "false";
 			data['count_refresh'] = "false";
@@ -139,6 +140,7 @@ jQuery( function( $ ) {
 	});
 	// Ajax add to qlist from shop
 	$( document ).on( 'click', '.addquotelistbutton', function(e) {
+        console.log('js-dvin-wcql hiiiiiii');
 		// AJAX add to cart request
 		var $thisbutton = $( this );
 		if ( $thisbutton.is( '.product_type_simple' ) || $thisbutton.is( '.product_type_external' )) {

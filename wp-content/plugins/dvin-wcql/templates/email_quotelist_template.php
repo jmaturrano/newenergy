@@ -6,6 +6,20 @@ require('email_quotelist_template_top.php');
 
 //below is the table, you can change the layout as you wish
 ?>
+<style>
+    table tr img{
+        height: auto !important;
+        max-width: 150px !important;
+    }
+    table tr td{
+        text-align: center;
+    }
+    table thead td{
+        font-weight: 600;
+        background: #FFC700;
+        padding: 8px !important;
+    }
+</style>
 <table cellspacing="1" cellpadding="1"  style="<?php echo $dvin_wcql_email_tbl_style; ?>">
 	<thead>
 		<tr style="<?php echo $dvin_wcql_email_tbl_hdr_style;?>">

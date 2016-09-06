@@ -2,7 +2,7 @@
 
 //determine whether to show proce column or not based on settings.
 $remove_price_col = Dvin_Wcql::show_price_column_email($atts);
-$arr_email_cols = array('thumbnail'=>'&nbsp;','name'=>'Product','price'=>'Price','sku'=>'SKU','quantity'=>'Quantity','subtotal'=>'Total'); //col and title in header
+$arr_email_cols = array('thumbnail'=>'&nbsp;','name'=>'Producto','price'=>'Precio','sku'=>'SKU','quantity'=>'Cantidad','subtotal'=>'Total'); //col and title in header
 
 if($remove_price_col) {
     unset($arr_email_cols['price']);

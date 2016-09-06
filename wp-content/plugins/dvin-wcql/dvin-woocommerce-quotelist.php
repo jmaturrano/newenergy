@@ -215,7 +215,7 @@ if(!defined('DOING_AJAX') || !DOING_AJAX) {
 				'post_type' => 'page',
 				'post_author' => 1,
 				'post_name' => 'Quotelist',
-				'post_title' => 'Request For a Quote',
+				'post_title' => 'Solicitud de cotización',
 				'post_content' => '[dvin-wcql-listing][dvin-wcql-form]',
 				'comment_status' => 'closed'
 			);
@@ -885,7 +885,7 @@ function dvin_wcql_updatebutton_row($arr_cols,$cols_counter,$grand_total_qty,$gr
       <tr>
             <td colspan="<?php echo $cols_counter;?>" align="right">
             <?php
-                echo '<div style="float:right;"><button type="button" class="button alt wcqlupdatelistbtn" onClick="javascript:ajax_req_update_quote();">'.apply_filters('update_list_text', __('Update List',"dvinwcql")).'</button></div></div>';
+                echo '<div style="float:right;"><button type="button" class="button alt wcqlupdatelistbtn" onClick="javascript:ajax_req_update_quote();">'.apply_filters('update_list_text', __('Actualizar lista',"dvinwcql")).'</button></div></div>';
             ?>
             </td>
     </tr>

@@ -33,7 +33,7 @@ if(Dvin_Wcql::usingStandardForm()) {
 
 //determine whether to show proce column or not based on settings.
 $remove_price_col = Dvin_Wcql::show_price_column();
-$arr_cols = array('remove'=>'&nbsp;','thumbnail'=>'&nbsp;','name'=>'Product','price'=>'Price','sku'=>'SKU','quantity'=>'Quantity','subtotal'=>'Total'); //col and title in header
+$arr_cols = array('remove'=>'&nbsp;','thumbnail'=>'&nbsp;','name'=>'Producto','price'=>'Precio','sku'=>'SKU','quantity'=>'Cantidad','subtotal'=>'Total'); //col and title in header
 
 //to make it compatible with POEdit and othe translation plugins
 $prod_str = __('Product','dvinwcql');
