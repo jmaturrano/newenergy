@@ -36,10 +36,10 @@
 	#sm_form > input[type="button"]{
 
 		margin: 0 ;
-		border: none !important;
-		color: #fff !important;
-		font-size: 18px !important;
-		margin-left: 1% !important;
+		border: none;
+		color: #fff;
+		font-size: 18px;
+		margin-left: 1% ;
 		font-family: helvetica,sans-serif;
 
 		background-color: rgb(122,188,255);
@@ -81,9 +81,9 @@
 		margin: 0 ;
 		padding:1.2% 4% 1.5% 4%;
 		border: none;
-		color: #fff !important;
-		font-size: 18px !important;
-		margin-left: -3% !important;
+		color: #fff ;
+		font-size: 18px;
+		margin-left: -3%;
 
 		background-color: rgb(122,188,255);
 		background: rgb(122,188,255); /* Old browsers */
