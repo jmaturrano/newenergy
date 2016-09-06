@@ -113,13 +113,26 @@ function mksystem_social_icons(){
 function mksystem_custom_links(){
   $html = '';
   $html .= '<ul class="nav navbar-nav nav-header text-center">';
-  $html .= '<li class="menu-item"><a class="social-icon" href="#"><i aria-hidden="true" class="fa fa-facebook fa-lg"></i></a></li>';
-  $html .= '<li class="menu-item"><a class="social-icon" href="#"><i aria-hidden="true" class="fa fa-twitter fa-lg"></i></a></li>';
-  $html .= '<li class="menu-item"><a class="social-icon" href="#"><i aria-hidden="true" class="fa fa-instagram fa-lg"></i></a></li>';
-  $html .= '<li class="menu-item"><a class="social-icon" href="#"><i aria-hidden="true" class="fa fa-linkedin fa-lg"></i></a></li>';
-  $html .= '<li class="menu-item"><a class="social-icon" href="#"><i aria-hidden="true" class="fa fa-youtube fa-lg"></i></a></li>';
-  $html .= '<li class="menu-item"><a class="social-icon" href="#"><i aria-hidden="true" class="fa fa-vimeo fa-lg"></i></a></li>';
+    if (get_theme_mod('social_facebook','')!='') {
+      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_facebook').'"><i aria-hidden="true" class="fa fa-facebook fa-lg"></i></a></li>';
+    }
 
+    if (get_theme_mod('social_twitter','')!='') {
+      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_twitter').'"><i aria-hidden="true" class="fa fa-twitter fa-lg"></i></a></li>';
+    }
+    if (get_theme_mod('social_instagram','')!='') {
+      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_instagram').'"><i aria-hidden="true" class="fa fa-instagram fa-lg"></i></a></li>';
+    }
+    if (get_theme_mod('social_linkedin','')!='') {
+      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_linkedin').'"><i aria-hidden="true" class="fa fa-linkedin fa-lg"></i></a></li>';
+    }
+    if (get_theme_mod('social_youtube','')!='') {
+      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_youtube').'"><i aria-hidden="true" class="fa fa-youtube fa-lg"></i></a></li>';
+    }
+    if (get_theme_mod('social_vimeo','')!='') {
+      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_vimeo').'"><i aria-hidden="true" class="fa fa-vimeo fa-lg"></i></a></li>';
+    }
+  
   $html .= '</ul>';
 
   echo $html;
@@ -545,7 +558,7 @@ function mksystem_customizer_register( $wp_customize ) {
   ));
   $wp_customize->add_control(
     new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_fondo', array(
-    'label'        => __( 'Color del Fondo <style> #customize-control-color_mksystem_cabecera, #accordion-section-background_image{display:none !important;}</style>', 'mksystem' ),
+    'label'        => __( 'Color del Fondo <style> #customize-control-color_mksystem_cabecera, #accordion-section-background_image, #accordion-panel-widgets, #accordion-section-static_front_page{display:none !important;}</style>', 'mksystem' ),
     'section'    => 'colors',
     'settings'   => 'color_mksystem_fondo',
   )));
@@ -563,7 +576,81 @@ function mksystem_customizer_register( $wp_customize ) {
     'settings' => 'imagen_mksystem_pie_pagina'
   )));
 
-
+  /*
+  *
+  * Agregando opción: social links
+  *
+  */
+  $wp_customize->add_section(
+        'social_links',
+        array(
+            'title' => __('Social links', 'mksystem'),
+            'priority' => 100
+        )
+    );
+  $wp_customize->add_setting('social_facebook',array(
+    'default' => __('http://facebook.com','mksystem')
+  ));
+  $wp_customize->add_control('social_facebook',array(
+    'label' => __('Facebook','mksystem'),
+    'section' => 'social_links',
+    'setting' => 'social_facebook',
+    'type'    => 'text'
+  ));
+  $wp_customize->add_setting('social_twitter',array(
+    'default' => __('http://twitter.com','mksystem')
+  ));
+  $wp_customize->add_control('social_twitter',array(
+    'label' => __('Twitter','mksystem'),
+    'section' => 'social_links',
+    'setting' => 'social_twitter',
+    'type'    => 'text'
+  ));
+  $wp_customize->add_setting('social_instagram',array(
+    'default' => __('http://instagram.com','mksystem')
+  ));
+  $wp_customize->add_control('social_instagram',array(
+    'label' => __('Instagram','mksystem'),
+    'section' => 'social_links',
+    'setting' => 'social_instagram',
+    'type'    => 'text'
+  ));
+  $wp_customize->add_setting('social_youtube',array(
+    'default' => __('http://youtube.com','mksystem')
+  ));
+  $wp_customize->add_control('social_youtube',array(
+    'label' => __('Youtube','mksystem'),
+    'section' => 'social_links',
+    'setting' => 'social_youtube',
+    'type'    => 'text'
+  ));
+  $wp_customize->add_setting('social_linkedin',array(
+    'default' => __('http://linkedin.com','mksystem')
+  ));
+  $wp_customize->add_control('social_linkedin',array(
+    'label' => __('Linkedin','mksystem'),
+    'section' => 'social_links',
+    'setting' => 'social_linkedin',
+    'type'    => 'text'
+  ));
+  $wp_customize->add_setting('social_vimeo',array(
+    'default' => __('http://vimeo.com','mksystem')
+  ));
+  $wp_customize->add_control('social_vimeo',array(
+    'label' => __('Vimeo','mksystem'),
+    'section' => 'social_links',
+    'setting' => 'social_vimeo',
+    'type'    => 'text'
+  ));
+  $wp_customize->add_setting('check_socialhide',array(
+      'default' => true
+  ));
+  $wp_customize->add_control( 'check_socialhide', array(
+       'settings' => 'check_socialhide',
+         'section'   => 'social_links',
+         'label'     => __('Uncheck This Option To Display This Section','mksystem'),
+         'type'      => 'checkbox'
+    ));
 
   // $wp_customize->remove_section('dazzling_important_links');
   // $wp_customize->remove_panel('widgets');
