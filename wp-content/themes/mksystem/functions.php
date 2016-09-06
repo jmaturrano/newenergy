@@ -134,9 +134,9 @@ function mksystem_custom_links(){
 function mksystem_header_scripts() {
 ?>
   <script>
-    var header = jQuery("#header_nav");
+    var header = jQuery(".custom-navbar");
     jQuery(document).scroll(function(e) {
-        if(jQuery(this).scrollTop() > jQuery("#header_page").height()) {
+        if(jQuery(this).scrollTop() > jQuery(".custom-header-page").height()) {
             header.css({"position" : "fixed", "top" : "0", "width" : "100%", "z-index" : "1000"});
         } else {
             header.css("position", "relative");
@@ -242,6 +242,16 @@ function mksystem_header_styles() {
     }
     .copy-right a{
       color: #FFC700 !important;
+    }
+    .btn-theme{
+      background-color: #e7c01b;
+      border-color: #e7c01b;
+    }
+    #searchsubmit{
+      color: #000;
+    }
+    .main-content-area{
+      background: #fff;
     }
   </style>
 <?php
@@ -464,7 +474,7 @@ function mksystem_footer_info() {
 ?>
   <div class="copy-right">&copy; <?php echo bloginfo('name');?> <?php echo date_i18n('Y'); ?>
     <?php echo esc_html__(" - Desarrollado por","mksystem");?> 
-    <a href="<?php echo esc_url("javascript:;","mksystem");?>" target="_blank"><?php echo esc_html__("MK System","mksystem");?></a> 
+    <a href="<?php echo esc_url("http://mksystemsoft.com","mksystem");?>" target="_blank"><?php echo esc_html__("MK System","mksystem");?></a> 
   </div>
 
 <?php
