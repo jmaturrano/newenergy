@@ -189,7 +189,8 @@ function mksystem_header_styles() {
       background: #fff;
     }
     .header-page{
-      background: url('http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/header-background.png');
+      /*background: url('http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/header-background.png');*/
+      background: url("<?php echo get_template_directory_child().'/inc/img/background/header-background.png'; ?>");
       border-bottom: 0 none !important;
       padding: 10px 0;
     }
@@ -520,7 +521,7 @@ function mksystem_customizer_register( $wp_customize ) {
 
   /*
   *
-  * Cambios de colores
+  * Cambios de tema
   *
   */
   $wp_customize->add_setting('color_mksystem_theme',array(
@@ -529,20 +530,26 @@ function mksystem_customizer_register( $wp_customize ) {
   ));
   $wp_customize->add_control(
     new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_theme', array(
-    'label'        => __( 'Color del tema <style>#accordion-section-dazzling_important_links, #accordion-section-dazzling_layout_options, #accordion-section-dazzling_action_options, #accordion-section-dazzling_typography_options, #accordion-section-dazzling_header_options, #accordion-section-dazzling_footer_options, #accordion-section-dazzling_social_options, #accordion-section-dazzling_other_options, #customize-control-header_textcolor{display:none !important;}</style>', 'mksystem' ),
-    'section'    => 'dazzling_header_options',
+    'label'        => __( 'Color del tema <style>#accordion-section-dazzling_important_links, #accordion-section-dazzling_layout_options, #accordion-section-dazzling_action_options, #accordion-section-dazzling_typography_options, #accordion-section-dazzling_header_options, #accordion-section-dazzling_footer_options, #accordion-section-dazzling_social_options, #accordion-section-dazzling_other_options, #customize-control-header_textcolor, #customize-control-background_color{display:none !important;}</style>', 'mksystem' ),
+    'section'    => 'colors',
     'settings'   => 'color_mksystem_theme',
   )));
-  $wp_customize->add_setting('color_mksystem_theme',array(
-    'default' => '#FFD800',
+
+  /*
+  *
+  * Cambios de cabecera
+  */
+  $wp_customize->add_setting('color_mksystem_cabecera',array(
+    'default' => '#1A1A1A',
     'transport' => 'refresh'
   ));
   $wp_customize->add_control(
-    new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_theme', array(
-    'label'        => __( 'Color del tema', 'mksystem' ),
-    'section'    => 'dazzling_header_options',
-    'settings'   => 'color_mksystem_theme',
+    new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_cabecera', array(
+    'label'        => __( 'Color del cabecera', 'mksystem' ),
+    'section'    => 'colors',
+    'settings'   => 'color_mksystem_cabecera',
   )));
+
 
   // $wp_customize->remove_section('dazzling_important_links');
   // $wp_customize->remove_panel('widgets');
