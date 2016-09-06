@@ -373,6 +373,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .navbar-nav > li > a {
     line-height: 9px;
   }
+  .content-area {
+    margin-bottom: 15px; 
+  }
+
+  .woo-menu-cart{
+    display: none !important;
+  }
+
+  .navbar-nav > li > a {
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  .social-icon {
+    width: 45px;
+  }
 
 }
 
@@ -388,11 +403,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     padding-bottom: 15px;
     padding-top: 15px;
   }
-  .social-icon {
-    width: 45px;
-  }
+
   .banner_content {
     padding: 7px !important;
+  }
+  #logo img{
+      max-width: 120px;
   }
 
 }
@@ -414,7 +430,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
    padding-top: 15px;
   }
   .social-icon {
-    width: 45px;
+    width: 38px;
   }
   .banner_content h5 {
       font: 100 28px/24px Lato!important;;
@@ -428,16 +444,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .banner_content {
       padding: 9px !important;
   }
-  #logo img{
-      max-width: 120px;
-  }
-  .woo-menu-cart{
-    display: none !important;
-  }
+  
   .navbar-nav > li > a {
     padding-bottom: 15px;
     padding-top: 15px;
     padding: 10px;
+  }
+  #header_page span {
+    font-size: 12px;
   }
 
 }
