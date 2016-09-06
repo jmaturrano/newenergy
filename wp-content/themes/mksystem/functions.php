@@ -174,7 +174,8 @@ function mksystem_header_styles() {
 ?>
   <style type="text/css">
     .navbar-mksystem{
-      background: #FFC700; 
+      /*background: #FFC700; */
+      background: <?php echo get_theme_mod('color_mksystem_theme'); ?>;
     }
     .navbar-mksystem a{
       color: #000; 
@@ -499,3 +500,44 @@ add_filter( 'woocommerce_product_tabs', 'woo_rename_tabs', 98 );
     add_action( 'woocommerce_single_product_summary',
             'woocommerce_template_single_add_to_cart', 15 );
 
+/*
+*
+* customizer 
+*
+*/
+
+function mksystem_customizer_register( $wp_customize ) {
+
+  /*
+  *
+  * Cambios de colores
+  *
+  */
+  $wp_customize->add_setting('color_mksystem_theme',array(
+    'default' => '#FFD800',
+    'transport' => 'refresh'
+  ));
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_theme', array(
+    'label'        => __( 'Color del tema <style>#accordion-section-dazzling_important_links, #accordion-section-dazzling_layout_options, #accordion-section-dazzling_action_options, #accordion-section-dazzling_typography_options, #accordion-section-dazzling_header_options, #accordion-section-dazzling_footer_options, #accordion-section-dazzling_social_options, #accordion-section-dazzling_other_options, #customize-control-header_textcolor{display:none !important;}</style>', 'mksystem' ),
+    'section'    => 'dazzling_header_options',
+    'settings'   => 'color_mksystem_theme',
+  )));
+  $wp_customize->add_setting('color_mksystem_theme',array(
+    'default' => '#FFD800',
+    'transport' => 'refresh'
+  ));
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control( $wp_customize, 'color_mksystem_theme', array(
+    'label'        => __( 'Color del tema', 'mksystem' ),
+    'section'    => 'dazzling_header_options',
+    'settings'   => 'color_mksystem_theme',
+  )));
+
+  // $wp_customize->remove_section('dazzling_important_links');
+  // $wp_customize->remove_panel('widgets');
+    
+}
+
+
+ add_action('customize_register','mksystem_customizer_register');
