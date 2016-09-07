@@ -127,7 +127,6 @@
                 <?php if ( get_theme_mod('Mapa', '') != '' ){ ?>
                         <?php echo  get_theme_mod('Mapa', ''); ?>
                         <?php } ?>
-
             </div>
         </div><!-- close .row -->
     </div><!-- close .container -->
