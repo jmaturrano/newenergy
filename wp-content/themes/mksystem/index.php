@@ -48,7 +48,7 @@
                 <div class="col-md-9 col-sm-12">
                     <div class="banners_wrapper">
                         <div class="banners_wrapper_wrap_inner">
-                            <a class="banner-wrap right-image" href="shop">
+                            <a class="banner-wrap right-image" href="<?= get_url_shop(); ?>">
                                 <figure class="featured-thumbnail">
                                     <img alt="" title="&lt;strong&gt;Power&lt;/strong&gt; Tools" src="<?php echo esc_url( get_theme_mod('Imagen_1') ); ?>" >
                                 </figure>
@@ -64,7 +64,7 @@
                                      <?php } ?></p>
                                 </div>
                             </a>
-                            <a class="banner-wrap left-image" href="shop">
+                            <a class="banner-wrap left-image" href="<?= get_url_shop(); ?>">
                                 <figure class="featured-thumbnail">
                                     <img alt="" title="&lt;strong&gt;Power&lt;/strong&gt; Tools" src="<?php echo esc_url( get_theme_mod('Imagen_2') ); ?>" >
                                 </figure>

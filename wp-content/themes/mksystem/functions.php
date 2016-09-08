@@ -568,7 +568,7 @@ function mksystem_customizer_register( $wp_customize ) {
   * Imagen de cabecera y pie de pagina
   */
   $wp_customize->add_setting('imagen_mksystem_pie_pagina',array(
-    'default' => get_template_directory_child().'http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/cropped-logo-1.png'
+    'default' => ''
   ));
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'imagen_mksystem_pie_pagina' , array(
     'label' => __('Pie de página' , 'mksystem'),
@@ -817,4 +817,10 @@ function mksystem_customizer_register( $wp_customize ) {
 }
 
 
- add_action('customize_register','mksystem_customizer_register');
+add_action('customize_register','mksystem_customizer_register');
+
+
+function get_url_shop(){
+  $shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ));
+  return $shop_page_url;
+}
