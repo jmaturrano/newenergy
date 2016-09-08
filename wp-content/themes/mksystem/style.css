@@ -176,6 +176,7 @@ body #motopress-main.main-holder .content-holder a:active{
 .banners_wrapper .banner-wrap:hover .banner_content p{ color: #ffc700; }
 .banners_wrapper .banners_wrapper_wrap_inner .banner-wrap{
   height: 285px;
+  width: 100%;
 }
 
 .featured-products_wrapper h2{
@@ -237,6 +238,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .sm_submit, #sm_submit{
   background-color: #292929 !important;
   border-radius: 0;
+  color: #fff !important;
   padding: 5px 25px !important;
   vertical-align: top;
 }
@@ -318,6 +320,33 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .category-product.nav{
   margin-bottom: 30px;
 }
+
+/* widget quotelist */
+.quotelist-section{
+  background: transparent;
+  padding: 5px 3px;
+  position: absolute;
+  right: -1px;
+  z-index: -1;
+}
+.quotelist-section > #quotelist-widget{
+  background: #000;
+  padding: 20px;
+  width: 280px;
+}
+.quotelist-section.active, 
+.quotelist-section:hover{
+  z-index: 1000;
+}
+#quotelist-widget ul.product_list_widget > li > a{
+  color: #fff;
+  font-size: 11px;
+}
+.navbar-mksystem ul.product_list_widget > li > a:hover{
+  background: #000 !important;
+  color: #FFD800 !important;
+}
+
 
 
 /*  Media queries */

@@ -168,6 +168,16 @@ function mksystem_header_scripts() {
         $subcategory.slideUp();
       }
     });
+
+    if(jQuery('.woo-menu-cart').length > 0){
+      jQuery('.woo-menu-cart').hover(
+        function(){
+        jQuery('.quotelist-section').addClass('active');
+        }, function(){
+          jQuery('.quotelist-section').removeClass('active');
+        }
+      );
+    }//end if
   </script>
 <?php
 }
@@ -202,13 +212,12 @@ function mksystem_header_styles() {
       background: #fff;
     }
     .header-page{
-      /*background: url('http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/header-background.png');*/
       background: url("<?php echo get_template_directory_child().'/inc/img/background/header-background.png'; ?>");
       border-bottom: 0 none !important;
       padding: 10px 0;
     }
     .footer-inner{
-      background: #191919 url("http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/footer_background.png") repeat-x scroll center top;
+      background: #191919 url("<?php echo get_template_directory_child().'/inc/img/background/footer_background.png'; ?>") repeat-x scroll center top;
       border: medium none;
       padding: 50px 0;
     }
@@ -217,13 +226,13 @@ function mksystem_header_styles() {
     }
     .navbar-default .navbar-nav > li > a.social-icon:hover, 
     .footer_social-wrapper a:hover{
-      background: #ffc700 !important;
+      background: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
     }
     .woocommerce #respond input#submit.alt, 
     .woocommerce a.button.alt, 
     .woocommerce button.button.alt, 
     .woocommerce input.button.alt{
-      background-color: #FFC700 !important;
+      background-color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
       color: #000 !important;
     }
     .woocommerce #respond input#submit.alt:hover, 
@@ -234,7 +243,7 @@ function mksystem_header_styles() {
       color: #fff !important;
     }
     .btn-quote{
-      background-color: #ffc700;
+      background-color: <?php echo get_theme_mod('color_mksystem_theme'); ?>;
       color: #000;
       font-weight: 600 !important;
       height: 31px;
@@ -246,17 +255,17 @@ function mksystem_header_styles() {
       color: #fff;
     }
     .scroll-to-top:hover{
-      background: #ffc700 !important;
+      background: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
     }
     .cfa{
-      background: #FFC700 !important;
+      background: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
     }
     .content-map-text p{
-      color: #FFC700;
+      color: <?php echo get_theme_mod('color_mksystem_theme'); ?>;
       font: 700 25px/25px Lato;
     }
     .copy-right a{
-      color: #FFC700 !important;
+      color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
     }
     .btn-theme{
       background-color: #e7c01b;
@@ -267,6 +276,15 @@ function mksystem_header_styles() {
     }
     .main-content-area{
       background: <?php echo get_theme_mod('color_mksystem_fondo'); ?>;
+    }
+    .btn-default, .label-default, 
+    .woocommerce #respond input#submit, 
+    .woocommerce a.button, 
+    .woocommerce button.button, 
+    .woocommerce input.button{
+      background-color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
+      border-color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
+      color: #000 !important;
     }
   </style>
 <?php
@@ -642,15 +660,6 @@ function mksystem_customizer_register( $wp_customize ) {
     'setting' => 'social_vimeo',
     'type'    => 'text'
   ));
-  $wp_customize->add_setting('check_socialhide',array(
-      'default' => true
-  ));
-  $wp_customize->add_control( 'check_socialhide', array(
-       'settings' => 'check_socialhide',
-         'section'   => 'social_links',
-         'label'     => __('Uncheck This Option To Display This Section','mksystem'),
-         'type'      => 'checkbox'
-    ));
 
   /*
   *
@@ -685,7 +694,7 @@ function mksystem_customizer_register( $wp_customize ) {
   ));
 
   $wp_customize->add_setting('Descripcion',array(
-    'default' => __('Descripcion','mksystem')
+    'default' => __('Descripción','mksystem')
   ));
   $wp_customize->add_control('Descripcion',array(
     'label' => __('Descripción','mksystem'),
@@ -694,9 +703,9 @@ function mksystem_customizer_register( $wp_customize ) {
     'type'    => 'textarea'
   ));
   $wp_customize->add_setting('Imagen_1',array(
-    'default' => get_template_directory_child().'http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/cropped-logo-1.png'
+    'default' => ''
   ));
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'mksystem_publicidad' , array(
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'Imagen_1' , array(
     'label' => __('Imagen 1' , 'mksystem'),
     'section' => 'mksystem_publicidad',
     'settings' => 'Imagen_1'
@@ -733,9 +742,9 @@ function mksystem_customizer_register( $wp_customize ) {
     'type'    => 'textarea'
   ));
   $wp_customize->add_setting('Imagen_2',array(
-    'default' => get_template_directory_child().'http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/cropped-logo-1.png'
+    'default' => ''
   ));
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'mksystem_publicidad' , array(
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'Imagen_2' , array(
     'label' => __('Imagen 2' , 'mksystem'),
     'section' => 'mksystem_publicidad',
     'settings' => 'Imagen_2'

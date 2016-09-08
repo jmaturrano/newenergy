@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Pagina Contacto
+ * Template Name: Pagina Nosotros
  *
  * This is the template that displays full width page without sidebar
  *
@@ -11,7 +11,7 @@ get_header('page'); ?>
 <div class="container main-content-area">
 	<div class="row">
 
-		<div id="primary" class="content-area col-sm-12 col-md-4">
+		<div id="primary" class="content-area col-sm-12 col-md-5">
 			<main id="main" class="site-main" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -29,11 +29,9 @@ get_header('page'); ?>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
-		<div class="content-area col-sm-12 col-md-8">
-			<div class="content-map" style="padding: 40px 0;">
-                <?php if ( get_theme_mod('Mapa', '') != '' ){ ?>
-                        <?php echo  get_theme_mod('Mapa', ''); ?>
-                <?php } ?>
+		<div class="content-area col-sm-12 col-md-7 content-map">
+			<div class="text-center" style="padding: 40px 20px;">
+				<?php the_post_thumbnail('full'); ?>
 			</div>
 		</div>
 	</div><!-- .row -->

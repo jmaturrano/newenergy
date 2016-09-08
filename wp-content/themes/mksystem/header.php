@@ -115,7 +115,10 @@
 
 					</div>
 					<div class="col-md-10 col-sm-10 col-xs-12">
-						<?php mksystem_header_menu(); ?>	
+						<?php mksystem_header_menu(); ?>
+						<div class="quotelist-section">
+							<div id="quotelist-widget"></div>
+						</div>
 					</div>
 				</nav><!--.nav-->
 

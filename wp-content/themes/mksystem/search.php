@@ -6,32 +6,39 @@
  */
 
 get_header(); ?>
-		<section id="primary" class="content-area col-sm-12 col-md-8">
-			<main id="main" class="site-main" role="main">
 
-			<?php if ( have_posts() ) : ?>
 
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'dazzling' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</header><!-- .page-header -->
+<div class="site-content">
+    <div class="container main-content-area">
+    	<div class="row">
+			<section id="primary" class="content-area col-sm-12 col-md-8">
+				<main id="main" class="site-main" role="main" style="padding: 20px 0px 80px;">
 
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php if ( have_posts() ) : ?>
 
-					<?php get_template_part( 'content', 'search' ); ?>
+					<header class="page-header">
+						<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'dazzling' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					</header><!-- .page-header -->
 
-				<?php endwhile; ?>
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php dazzling_paging_nav(); ?>
+						<?php get_template_part( 'content', 'search' ); ?>
 
-			<?php else : ?>
+					<?php endwhile; ?>
 
-				<?php get_template_part( 'content', 'none' ); ?>
+					<?php dazzling_paging_nav(); ?>
 
-			<?php endif; ?>
+				<?php else : ?>
 
-			</main><!-- #main -->
-		</section><!-- #primary -->
+					<?php get_template_part( 'content', 'none' ); ?>
 
-<?php get_sidebar(); ?>
+				<?php endif; ?>
+
+				</main><!-- #main -->
+			</section><!-- #primary -->
+    	</div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- .site-content -->
+
 <?php get_footer(); ?>
