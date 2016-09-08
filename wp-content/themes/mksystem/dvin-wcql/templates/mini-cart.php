@@ -32,8 +32,10 @@ $data_arr = apply_filters('dvin_qlist_cols_data',$data_arr);
 <div class="woocommerce">
 <ul class="cart_list product_list_widget">
 <?php
+$item = 0;
 if ( sizeof($data_arr)> 0) :
     foreach( $data_arr as $cart_item_key => $cart_item ) {
+        $item++;
     ?>
           <li>
             <a href="<?php echo $cart_item['product-link']; ?>">
@@ -51,7 +53,21 @@ if ( sizeof($data_arr)> 0) :
 		<a href="<?php echo Dvin_Wcql::get_url(); ?>" class="button wc-forward minicart-button"><?php echo apply_filters('dvin_wcql_viewquotelist',__('Confirmar','dvinwcql')); ?></a>
 	</p>
     <?php else : ?>
-		<li class="empty"><?php _e( 'No products in the list', 'dvinwcql' ); ?></li>
+		<li class="empty"><?php _e( 'No hay productos en la lista', 'dvinwcql' ); ?></li>
 	<?php endif; ?>
     </ul>
 </div>
+
+<script>
+    var items = "<?php echo $item; ?>";
+    console.log(items);
+    var articulos = '';
+    if(jQuery('.woo-menu-cart').length > 0){
+        if(items == 1){
+            articulos = items+' Artículo';
+        }else{
+            articulos = items+' Artículos';
+        }
+        jQuery('.woo-menu-cart').html('<i class="fa fa-shopping-cart"></i> '+ articulos);
+    }//end if
+</script>

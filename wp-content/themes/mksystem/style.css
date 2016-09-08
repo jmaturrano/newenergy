@@ -324,6 +324,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 /* widget quotelist */
 .quotelist-section{
   background: transparent;
+  display: none;
   padding: 5px 3px;
   position: absolute;
   right: -1px;
@@ -336,6 +337,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 }
 .quotelist-section.active, 
 .quotelist-section:hover{
+  display: block;
   z-index: 1000;
 }
 #quotelist-widget ul.product_list_widget > li > a{

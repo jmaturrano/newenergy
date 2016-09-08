@@ -13,6 +13,7 @@ require('email_quotelist_template_top.php');
     }
     table tr td{
         text-align: center;
+        padding: 0 15px !important;
     }
     table thead td{
         font-weight: 600;

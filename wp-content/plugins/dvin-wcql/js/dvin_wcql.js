@@ -328,9 +328,12 @@ function refresh_quotelist_widget() {
                 fragments = response.fragments;
                 // Replace fragments
                 if ( fragments ) {
+                    var item = 0;
                     jQuery.each( fragments, function( key, value ) {
+                        item++;
                         jQuery( key ).replaceWith( value );
                     });
+                    console.log("refresh_quotelist_widget count: "+item);
                 }
             }
     });

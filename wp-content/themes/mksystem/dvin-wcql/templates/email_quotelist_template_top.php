@@ -5,7 +5,7 @@ $remove_price_col = Dvin_Wcql::show_price_column_email($atts);
 $arr_email_cols = array('thumbnail'=>'&nbsp;','name'=>'Producto','price'=>'Precio','sku'=>'SKU','quantity'=>'Cantidad','subtotal'=>'Total'); //col and title in header
 
 if($remove_price_col) {
-    unset($arr_email_cols['price']);
+    // unset($arr_email_cols['price']);
     unset($arr_email_cols['subtotal']);
 }
 
