@@ -50,22 +50,34 @@
                         <div class="banners_wrapper_wrap_inner">
                             <a class="banner-wrap right-image" href="shop">
                                 <figure class="featured-thumbnail">
-                                    <img alt="" title="&lt;strong&gt;Power&lt;/strong&gt; Tools" src="http://livedemo00.template-help.com/woocommerce_53020/wp-content/uploads/2015/02/banner1-image.png">
+                                    <img alt="" title="&lt;strong&gt;Power&lt;/strong&gt; Tools" src="<?php echo esc_url( get_theme_mod('Imagen_1') ); ?>" >
                                 </figure>
                                 <div class="banner_content">
-                                    <h5><strong>Power</strong> Tools</h5>
-                                    <h4>20% off</h4>
-                                    <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <h5><?php if ( get_theme_mod('Texto_1', '') != '' ){ ?>
+                                     <?php echo  get_theme_mod('Texto_1', ''); ?>
+                                     <?php } ?></h5>
+                                    <h4><?php if ( get_theme_mod('Texto_2', '') != '' ){ ?>
+                                     <?php echo  get_theme_mod('Texto_2', ''); ?>
+                                     <?php } ?></h4>
+                                    <p><?php if ( get_theme_mod('Descripcion', '') != '' ){ ?>
+                                     <?php echo  get_theme_mod('Descripcion', ''); ?>
+                                     <?php } ?></p>
                                 </div>
                             </a>
                             <a class="banner-wrap left-image" href="shop">
                                 <figure class="featured-thumbnail">
-                                    <img alt="" title="&lt;strong&gt;Hand &lt;/strong&gt;Tools" src="http://livedemo00.template-help.com/woocommerce_53020/wp-content/uploads/2015/02/banner2-image.png">
+                                    <img alt="" title="&lt;strong&gt;Power&lt;/strong&gt; Tools" src="<?php echo esc_url( get_theme_mod('Imagen_2') ); ?>" >
                                 </figure>
                                 <div class="banner_content">
-                                    <h5><strong>Hand </strong>Tools</h5>
-                                    <h4>20% off</h4>
-                                    <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    <h5><?php if ( get_theme_mod('Texto_1b', '') != '' ){ ?>
+                                     <?php echo  get_theme_mod('Texto_1b', ''); ?>
+                                     <?php } ?></h5>
+                                    <h4><?php if ( get_theme_mod('Texto_2b', '') != '' ){ ?>
+                                     <?php echo  get_theme_mod('Texto_2b', ''); ?>
+                                     <?php } ?></h4>
+                                    <p><?php if ( get_theme_mod('Descripcionb', '') != '' ){ ?>
+                                     <?php echo  get_theme_mod('Descripcionb', ''); ?>
+                                     <?php } ?></p>
                                 </div>
                             </a>
                             <div class="clear"></div><!-- .clear (end) -->
@@ -96,15 +108,25 @@
         <div class="row">
             <div class="content-map">
                 <div class="content-map-text text-center">
-                    <h4>Jr. Paruro N° 1132 - Lima</h4>
-                    <p>(+51) 234-5678</p>
-                    <p>(+51) 234-5678</p>
-                    <span>Email: informes@ejemplo.com</span>
+                    <h4><?php if ( get_theme_mod('direccion', '') != '' ){ ?>
+                        <?php echo  get_theme_mod('direccion', ''); ?>
+                        <?php } ?></h4>
+                    <p><?php if ( get_theme_mod('telefono1', '') != '' ){ ?>
+                        <?php echo  get_theme_mod('telefono1', ''); ?>
+                        <?php } ?></p>
+                    <p><?php if ( get_theme_mod('telefono2', '') != '' ){ ?>
+                        <?php echo  get_theme_mod('telefono2', ''); ?>
+                        <?php } ?></p>
+                    <span><?php if ( get_theme_mod('email', '') != '' ){ ?>
+                        <?php echo  get_theme_mod('email', ''); ?>
+                        <?php } ?></span>
                 </div>
                 <div class="mask-map">
                     &nbsp;
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487.7248070129628!2d-77.02572674433324!3d-12.057383792513283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8bb99e2a257%3A0xb54d58529039b79f!2zSmlyw7NuIFBhcnVybywgTGltYSwgUGVyw7o!5e0!3m2!1ses!2ses!4v1472138471590" width="1900" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <?php if ( get_theme_mod('Mapa', '') != '' ){ ?>
+                        <?php echo  get_theme_mod('Mapa', ''); ?>
+                        <?php } ?>
             </div>
         </div><!-- close .row -->
     </div><!-- close .container -->

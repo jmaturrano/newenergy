@@ -652,9 +652,168 @@ function mksystem_customizer_register( $wp_customize ) {
          'type'      => 'checkbox'
     ));
 
-  // $wp_customize->remove_section('dazzling_important_links');
-  // $wp_customize->remove_panel('widgets');
-    
+  /*
+  *
+  * Publicidad 
+  *
+  */
+  $wp_customize->add_section(
+        'mksystem_publicidad',
+        array(
+            'title' => __('Publicidad', 'mksystem'),
+            'priority' => 100
+        )
+    );
+  $wp_customize->add_setting('Texto_1',array(
+    'default' => __('Power Tools','mksystem')
+  ));
+  $wp_customize->add_control('Texto_1',array(
+    'label' => __('Texto 1','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Texto_1',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Texto_2',array(
+    'default' => __('20% off','mksystem')
+  ));
+  $wp_customize->add_control('Texto_2',array(
+    'label' => __('Texto 2','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Texto_2',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Descripcion',array(
+    'default' => __('Descripcion','mksystem')
+  ));
+  $wp_customize->add_control('Descripcion',array(
+    'label' => __('Descripción','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Descripcion',
+    'type'    => 'textarea'
+  ));
+  $wp_customize->add_setting('Imagen_1',array(
+    'default' => get_template_directory_child().'http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/cropped-logo-1.png'
+  ));
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'mksystem_publicidad' , array(
+    'label' => __('Imagen 1' , 'mksystem'),
+    'section' => 'mksystem_publicidad',
+    'settings' => 'Imagen_1'
+  )));
+
+
+  $wp_customize->add_setting('Texto_1b',array(
+    'default' => __('Power Tools','mksystem')
+  ));
+  $wp_customize->add_control('Texto_1b',array(
+    'label' => __('Texto 1','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Texto_1b',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Texto_2b',array(
+    'default' => __('20% off','mksystem')
+  ));
+  $wp_customize->add_control('Texto_2b',array(
+    'label' => __('Texto 2','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Texto_2b',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Descripcionb',array(
+    'default' => __('Descripcion','mksystem')
+  ));
+  $wp_customize->add_control('Descripcionb',array(
+    'label' => __('Descripción','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Descripcionb',
+    'type'    => 'textarea'
+  ));
+  $wp_customize->add_setting('Imagen_2',array(
+    'default' => get_template_directory_child().'http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/cropped-logo-1.png'
+  ));
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'mksystem_publicidad' , array(
+    'label' => __('Imagen 2' , 'mksystem'),
+    'section' => 'mksystem_publicidad',
+    'settings' => 'Imagen_2'
+  )));
+
+  /*
+  *
+  * Contactos
+  *
+  */
+  $wp_customize->add_section(
+        'mksystem_contacto',
+        array(
+            'title' => __('Contactos', 'mksystem'),
+            'priority' => 100
+        )
+    );
+  $wp_customize->add_setting('direccion',array(
+    'default' => __('Jr. Paruro N° 1132 - Lima','mksystem')
+  ));
+  $wp_customize->add_control('direccion',array(
+    'label' => __('Dirección','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'direccion',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('telefono1',array(
+    'default' => __('(+51) 234-5678','mksystem')
+  ));
+  $wp_customize->add_control('telefono1',array(
+    'label' => __('Teléfono','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'telefono1',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('telefono2',array(
+    'default' => __('(+51) 234-5678','mksystem')
+  ));
+  $wp_customize->add_control('telefono2',array(
+    'label' => __('Teléfono','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'telefono2',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('email',array(
+    'default' => __('informes@ejemplo.com','mksystem')
+  ));
+  $wp_customize->add_control('email',array(
+    'label' => __('Email','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'email',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Mapa',array(
+    'default' => __('informes@ejemplo.com','mksystem')
+  ));
+  $wp_customize->add_control('Mapa',array(
+    'label' => __('Mapa','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'Mapa',
+    'type'    => 'textarea'
+  ));
+
+   $wp_customize->add_setting('texto_cabecera',array(
+    'default' => __('Texto por defecto','mksystem')
+  ));
+  $wp_customize->add_control('texto_cabecera',array(
+    'label' => __('Texto de Cabecera','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'texto_cabecera',
+    'type'    => 'textarea'
+  ));
+
+
 }
 
 
