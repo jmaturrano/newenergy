@@ -59,19 +59,19 @@ class Dvin_Wcql_UI {
 
 //common code to both instances
 		$qlistlink .='<span class="dvin_wcql_btn_ajaxico_wrap"><img style="display: none;border:0; width:16px; height:16px;" src="'.DVIN_QLIST_PLUGIN_WEBURL.'images/ajax-loader.gif" class="ajax-loading-img ajax-loading-img-bottom" alt="Working..."/></span></div><div class="quotelistaddedbrowse_prodpage" style="display:none;">';
-		$qlistlink .='<a class="quotelist-added-icon"  href="'.$url.'">'.apply_filters('dvin_prodaddedtoquote_text',__('Product Added to Quote','dvinwcql')).'</a><br/>';
+		$qlistlink .='<a class="quotelist-added-icon"  href="'.$url.'">'.apply_filters('dvin_prodaddedtoquote_text',__('Producto en lista','dvinwcql')).'</a><br/>';
         
         if(!dvin_wcql_addons())
-            $qlistlink .='<a class="quotelist-remove-icon removefromprodpage" rel="nofollow" data-product_id="'.$product->id.'" href="javascript:void(0)" >'.apply_filters('dvin_prodremovefromquote_text',__('Remove from Quote',"dvinwcql")).'</a>';
+            $qlistlink .='<a class="quotelist-remove-icon removefromprodpage" rel="nofollow" data-product_id="'.$product->id.'" href="javascript:void(0)" >'.apply_filters('dvin_prodremovefromquote_text',__('Quitar de la lista',"dvinwcql")).'</a>';
         $qlistlink .='</div>';
         
 		$display_style = $prod_exists?'block;':'none;';
 		//exists
 		$qlistlink .='<div class="quotelistexistsbrowse_prodpage" style="display:'.$display_style.'">';
-		$qlistlink .='<a class="quotelist-added-icon"  href="'.$url.'">'.apply_filters('dvin_prodaddedtoquote_text',__('Product Added to Quote','dvinwcql')).'</a><br/>';
+		$qlistlink .='<a class="quotelist-added-icon"  href="'.$url.'">'.apply_filters('dvin_prodaddedtoquote_text',__('Producto en lista','dvinwcql')).'</a><br/>';
         
          if(!dvin_wcql_addons())
-            $qlistlink .='<a class="quotelist-remove-icon removefromprodpage" rel="nofollow" data-product_id="'.$product->id.'" href="javascript:void(0)">'.apply_filters('dvin_prodremovefromquote_text',__('Remove from Quote',"dvinwcql")).'</a>';
+            $qlistlink .='<a class="quotelist-remove-icon removefromprodpage" rel="nofollow" data-product_id="'.$product->id.'" href="javascript:void(0)">'.apply_filters('dvin_prodremovefromquote_text',__('Quitar de la lista',"dvinwcql")).'</a>';
         $qlistlink .='</div>';
         
 		$qlistlink .='<div style="clear:both"></div><div class="quotelistaddresponse"></div></div>';
