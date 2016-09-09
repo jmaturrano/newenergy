@@ -6,34 +6,26 @@
  */
 
 get_header(); ?>
+	<div id="primary" class="content-area col-sm-12 col-md-8">
+		<main id="main" class="site-main" role="main">
 
-<div class="container main-content-area">
-	<div class="row">
+		<?php while ( have_posts() ) : the_post(); ?>
 
-		<div id="primary" class="content-area col-sm-12 col-md-12">
-			<main id="main" class="site-main" role="main">
+			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php dazzling_post_nav(); ?>
 
-				<?php get_template_part( 'content', 'single' ); ?>
+			<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || '0' != get_comments_number() ) :
+					comments_template();
+				endif;
+			?>
 
-				<?php dazzling_post_nav(); ?>
+		<?php endwhile; // end of the loop. ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						//comments_template();
-					endif;
-				?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-			<?php endwhile; // end of the loop. ?>
-
-			</main><!-- #main -->
-		</div><!-- #primary -->
-
-
-	</div><!-- .row -->
-</div><!-- .container -->
-
-<?php //get_sidebar(); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
