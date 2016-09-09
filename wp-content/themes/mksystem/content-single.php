@@ -9,7 +9,7 @@
 
 		<?php the_post_thumbnail( 'dazzling-featured', array( 'class' => 'thumbnail' )); ?>
 
-		<h1 class="entry-title "><?php the_title(); ?></h1>
+		<h1 class="entry-title jmaturrano1"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
 			<?php dazzling_posted_on(); ?>

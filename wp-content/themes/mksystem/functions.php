@@ -286,6 +286,10 @@ function mksystem_header_styles() {
       border-color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
       color: #000 !important;
     }
+    .site-main [class*="navigation"] a:hover, 
+    .more-link:hover{
+      background-color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
+    }
   </style>
 <?php
 }
@@ -368,7 +372,11 @@ function mksystem_call_for_action() {
 /**
  * Get all categories
  */
-function mksystem_product_categories(){
+function mksystem_product_categories($thumb = ''){
+
+  // $thumb = 'thumbnail';
+  // $thumb = 'catalog';
+  // $thumb = 'single';
 
   $taxonomy     = 'product_cat';
   $orderby      = 'name';  
@@ -394,6 +402,14 @@ function mksystem_product_categories(){
   foreach ($all_categories as $cat) {
     if($cat->category_parent == 0) {
 
+      $cat_thumb_id = get_woocommerce_term_meta($cat->term_id, 'thumbnail_id', true);
+      if($thumb === ''){
+        $cat_thumb_url = wp_get_attachment_thumb_url($cat_thumb_id);
+      }else{
+        $cat_thumb_url_ = wp_get_attachment_image_src($cat_thumb_id, $thumb);
+        $cat_thumb_url = $cat_thumb_url_[0];
+      }
+
       $term_link = get_term_link($cat, 'product_cat');
 
       $category_products[$cat->term_id]['id'] = $cat->term_id;
@@ -402,6 +418,7 @@ function mksystem_product_categories(){
       $category_products[$cat->term_id]['taxonomy'] = $cat->taxonomy;
       $category_products[$cat->term_id]['count'] = $cat->count;
       $category_products[$cat->term_id]['description'] = $cat->description;
+      $category_products[$cat->term_id]['thumb_url'] = $cat_thumb_url;
       $category_products[$cat->term_id]['term_link'] = $term_link;
 
       $category_products[$cat->term_id]['childs'] = array();
@@ -428,6 +445,15 @@ function mksystem_product_categories(){
     $i = 0;
     foreach ($subcategory as $subcat) {
 
+
+      $cat_thumb_id = get_woocommerce_term_meta($cat->term_id, 'thumbnail_id', true);
+      if($thumb === ''){
+        $cat_thumb_url = wp_get_attachment_thumb_url($cat_thumb_id);
+      }else{
+        $cat_thumb_url_ = wp_get_attachment_image_src($cat_thumb_id, $thumb);
+        $cat_thumb_url = $cat_thumb_url_[0];
+      }
+
       $term_link = get_term_link($subcat, 'product_cat');
 
       $category_products[$subcat->parent]['childs'][$i]['id'] = $subcat->term_id;
@@ -436,6 +462,7 @@ function mksystem_product_categories(){
       $category_products[$subcat->parent]['childs'][$i]['taxonomy'] = $subcat->taxonomy;
       $category_products[$subcat->parent]['childs'][$i]['count'] = $subcat->count;
       $category_products[$subcat->parent]['childs'][$i]['description'] = $subcat->description;
+      $category_products[$subcat->parent]['childs'][$i]['thumb_url'] = $cat_thumb_url;
       $category_products[$subcat->parent]['childs'][$i]['term_link'] = $term_link;
       $i++;
     }//end foreach
@@ -483,7 +510,7 @@ function mksystem_categories_list_footer(){
     $categories_html .= '<ul class="nav footer-nav clearfix">';
     foreach ($category_products as $category) {
       if($items <= 9){
-        $categories_html .= '<li class="menu-item"><a href="'.home_url('/product-category/'.$category['slug']).'">'.$category['name'].'</a></li>';
+        $categories_html .= '<li class="menu-item"><a href="'.$category['term_link'].'">'.$category['name'].'</a></li>';
       }//end if
       $items++;
     }//end foreach
@@ -833,3 +860,48 @@ function get_url_shop(){
   $shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ));
   return $shop_page_url;
 }
+
+
+function mksystem_categories_list_page(){
+  $categories_html = '';
+  $category_products = mksystem_product_categories();
+  if(count($category_products) > 0){
+
+    foreach ($category_products as $category) {
+
+      $thumb_url = ($category['thumb_url'] == '') ? get_template_directory_child().'/inc/img/categorias/default_400x400.jpg' : $category['thumb_url'];
+
+      $categories_html .= '<div class="col-md-3 text-center">';
+      $categories_html .= '<a href="'.$category['term_link'].'" title="'.$category['name'].'" class="thumbnail">';
+      $categories_html .= '<img src="'.$thumb_url.'">';
+      $categories_html .= '</a>';
+      $categories_html .= '<h3>'.$category['name'].'</h3>';
+      $categories_html .= '</div>';
+
+      if(count($category['childs']) > 0){
+        foreach ($category['childs'] as $subcategory) {
+
+          $thumb_url_ = ($subcategory['thumb_url'] == '') ? get_template_directory_child().'/inc/img/categorias/default_400x400.jpg' : $subcategory['thumb_url'];
+          $categories_html .= '<div class="col-md-3 text-center">';
+          $categories_html .= '<a href="'.$subcategory['term_link'].'" title="'.$subcategory['name'].'" class="thumbnail">';
+          $categories_html .= '<img src="'.$thumb_url_.'">';
+          $categories_html .= '</a>';
+          $categories_html .= '<h3>'.$subcategory['name'].'</h3>';
+          $categories_html .= '</div>';
+
+        }//end foreach
+      }//end if
+
+    }//end foreach
+  }//end if
+
+  echo $categories_html;
+}
+
+
+function custom_excerpt_length( $length ) {
+  return 15;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+

@@ -348,6 +348,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   background: #000 !important;
   color: #FFD800 !important;
 }
+.entry-title{
+  font-size: 20px;
+}
+.navigation.paging-navigation{
+  padding-top: 20px;
+  width: 100%;
+}
+a{
+  color: #000;
+}
 
 
 
