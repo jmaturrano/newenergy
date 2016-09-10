@@ -352,7 +352,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .entry-title{
   font-size: 18px;
 }
-
+.woocommerce-info{
+  border-top-color: #000;
+}
+.woocommerce-info::before{
+  color: #000;
+}
 
 /*  Media queries */
 

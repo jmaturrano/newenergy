@@ -506,7 +506,7 @@ function mksystem_categories_list_footer(){
     $categories_html .= '<ul class="nav footer-nav clearfix">';
     foreach ($category_products as $category) {
       if($items <= 9){
-        $categories_html .= '<li class="menu-item"><a href="'.home_url('/product-category/'.$category['slug']).'">'.$category['name'].'</a></li>';
+        $categories_html .= '<li class="menu-item"><a href="'.$category['term_link'].'">'.$category['name'].'</a></li>';
       }//end if
       $items++;
     }//end foreach
