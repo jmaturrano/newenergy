@@ -867,8 +867,8 @@ function mksystem_categories_list_page(){
       $thumb_url = ($category['thumb_url'] == '') ? get_template_directory_child().'/inc/img/categorias/default_400x400.jpg' : $category['thumb_url'];
 
       $categories_html .= '<div class="col-md-3 col-sm-3 col-xs-6 text-center">';
-      $categories_html .= '<a href="'.$category['term_link'].'" title="'.$category['name'].'">';
-      $categories_html .= '<img class="img-thumbnail" src="'.$thumb_url.'">';
+      $categories_html .= '<a href="'.$category['term_link'].'" title="'.$category['name'].'" class="thumbnail">';
+      $categories_html .= '<img src="'.$thumb_url.'">';
       $categories_html .= '</a>';
       $categories_html .= '<h3>'.$category['name'].'</h3>';
       $categories_html .= '</div>';
@@ -877,10 +877,10 @@ function mksystem_categories_list_page(){
         foreach ($category['childs'] as $subcategory) {
 
           $thumb_url = ($subcategory['thumb_url'] == '') ? get_template_directory_child().'/inc/img/categorias/default_400x400.jpg' : $subcategory['thumb_url'];
-          
+
           $categories_html .= '<div class="col-md-3 col-sm-3 col-xs-6 text-center">';
-          $categories_html .= '<a href="'.$subcategory['term_link'].'" title="'.$subcategory['name'].'">';
-          $categories_html .= '<img class="img-thumbnail" src="'.$thumb_url.'">';
+          $categories_html .= '<a href="'.$subcategory['term_link'].'" title="'.$subcategory['name'].'" class="thumbnail">';
+          $categories_html .= '<img src="'.$thumb_url.'">';
           $categories_html .= '</a>';
           $categories_html .= '<h3>'.$subcategory['name'].'</h3>';
           $categories_html .= '</div>';
