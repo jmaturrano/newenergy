@@ -497,7 +497,7 @@ function mksystem_categories_list_footer(){
  * Get featured products
  */
 function mksystem_featured_products(){
-  echo do_shortcode('[featured_products per_page="12" columns="3"]');
+  echo do_shortcode('[featured_products per_page="12" columns="4"]');
 }
 
 /**

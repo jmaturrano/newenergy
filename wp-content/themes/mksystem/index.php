@@ -83,15 +83,20 @@
                             <div class="clear"></div><!-- .clear (end) -->
                         </div>
                     </div>
-                    <div class="featured-products_wrapper">
-                        <div class="featured-products_wrapper_wrap_inner">
-                            <h2><strong>Principales</strong> productos</h2>
-                            <?php mksystem_featured_products(); ?>
-                        </div>
-                    </div>
+                    <!--featured products estaba aqui-->
                 </div>
             </div><!--#content-->
         </div><!--.row-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="featured-products_wrapper">
+                    <div class="featured-products_wrapper_wrap_inner">
+                        <h2><strong>Principales</strong> productos</h2>
+                        <?php mksystem_featured_products(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div><!-- .container -->
 </div><!-- close .site-content -->
 
