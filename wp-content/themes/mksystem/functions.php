@@ -114,23 +114,23 @@ function mksystem_custom_links(){
   $html = '';
   $html .= '<ul class="nav navbar-nav nav-header text-center">';
     if (get_theme_mod('social_facebook','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_facebook').'"><i aria-hidden="true" class="fa fa-facebook fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="facebook" href="'.get_theme_mod('social_facebook').'"><i aria-hidden="true" class="fa fa-facebook fa-lg"></i></a></li>';
     }
 
     if (get_theme_mod('social_twitter','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_twitter').'"><i aria-hidden="true" class="fa fa-twitter fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="twitter" href="'.get_theme_mod('social_twitter').'"><i aria-hidden="true" class="fa fa-twitter fa-lg"></i></a></li>';
     }
     if (get_theme_mod('social_instagram','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_instagram').'"><i aria-hidden="true" class="fa fa-instagram fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="instagram" href="'.get_theme_mod('social_instagram').'"><i aria-hidden="true" class="fa fa-instagram fa-lg"></i></a></li>';
     }
     if (get_theme_mod('social_linkedin','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_linkedin').'"><i aria-hidden="true" class="fa fa-linkedin fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="linkedin" href="'.get_theme_mod('social_linkedin').'"><i aria-hidden="true" class="fa fa-linkedin fa-lg"></i></a></li>';
     }
     if (get_theme_mod('social_youtube','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_youtube').'"><i aria-hidden="true" class="fa fa-youtube fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="youtube" href="'.get_theme_mod('social_youtube').'"><i aria-hidden="true" class="fa fa-youtube fa-lg"></i></a></li>';
     }
     if (get_theme_mod('social_vimeo','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_vimeo').'"><i aria-hidden="true" class="fa fa-vimeo fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="vimeo" href="'.get_theme_mod('social_vimeo').'"><i aria-hidden="true" class="fa fa-vimeo fa-lg"></i></a></li>';
     }
   
   $html .= '</ul>';
@@ -870,7 +870,7 @@ function mksystem_categories_list_page(){
       $categories_html .= '<a href="'.$category['term_link'].'" title="'.$category['name'].'" class="thumbnail">';
       $categories_html .= '<img src="'.$thumb_url.'">';
       $categories_html .= '</a>';
-      $categories_html .= '<h3>'.$category['name'].'</h3>';
+      $categories_html .= '<h4>'.$category['name'].'</h4>';
       $categories_html .= '</div>';
 
       if(count($category['childs']) > 0){
@@ -882,7 +882,7 @@ function mksystem_categories_list_page(){
           $categories_html .= '<a href="'.$subcategory['term_link'].'" title="'.$subcategory['name'].'" class="thumbnail">';
           $categories_html .= '<img src="'.$thumb_url.'">';
           $categories_html .= '</a>';
-          $categories_html .= '<h3>'.$subcategory['name'].'</h3>';
+          $categories_html .= '<h4>'.$subcategory['name'].'</h4>';
           $categories_html .= '</div>';
         }//end foreach
       }//end if
