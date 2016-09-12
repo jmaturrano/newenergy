@@ -114,23 +114,23 @@ function mksystem_custom_links(){
   $html = '';
   $html .= '<ul class="nav navbar-nav nav-header text-center">';
     if (get_theme_mod('social_facebook','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_facebook').'"><i aria-hidden="true" class="fa fa-facebook fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="facebook" href="'.get_theme_mod('social_facebook').'"><i aria-hidden="true" class="fa fa-facebook fa-lg"></i></a></li>';
     }
 
     if (get_theme_mod('social_twitter','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_twitter').'"><i aria-hidden="true" class="fa fa-twitter fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="twitter" href="'.get_theme_mod('social_twitter').'"><i aria-hidden="true" class="fa fa-twitter fa-lg"></i></a></li>';
     }
     if (get_theme_mod('social_instagram','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_instagram').'"><i aria-hidden="true" class="fa fa-instagram fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="instagram" href="'.get_theme_mod('social_instagram').'"><i aria-hidden="true" class="fa fa-instagram fa-lg"></i></a></li>';
     }
     if (get_theme_mod('social_linkedin','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_linkedin').'"><i aria-hidden="true" class="fa fa-linkedin fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="linkedin" href="'.get_theme_mod('social_linkedin').'"><i aria-hidden="true" class="fa fa-linkedin fa-lg"></i></a></li>';
     }
     if (get_theme_mod('social_youtube','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_youtube').'"><i aria-hidden="true" class="fa fa-youtube fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="youtube" href="'.get_theme_mod('social_youtube').'"><i aria-hidden="true" class="fa fa-youtube fa-lg"></i></a></li>';
     }
     if (get_theme_mod('social_vimeo','')!='') {
-      $html .= '<li class="menu-item"><a class="social-icon" href="'.get_theme_mod('social_vimeo').'"><i aria-hidden="true" class="fa fa-vimeo fa-lg"></i></a></li>';
+      $html .= '<li class="menu-item"><a class="social-icon" title="vimeo" href="'.get_theme_mod('social_vimeo').'"><i aria-hidden="true" class="fa fa-vimeo fa-lg"></i></a></li>';
     }
   
   $html .= '</ul>';
@@ -168,6 +168,16 @@ function mksystem_header_scripts() {
         $subcategory.slideUp();
       }
     });
+
+    if(jQuery('.woo-menu-cart').length > 0){
+      jQuery('.woo-menu-cart').hover(
+        function(){
+        jQuery('.quotelist-section').addClass('active');
+        }, function(){
+          jQuery('.quotelist-section').removeClass('active');
+        }
+      );
+    }//end if
   </script>
 <?php
 }
@@ -202,13 +212,12 @@ function mksystem_header_styles() {
       background: #fff;
     }
     .header-page{
-      /*background: url('http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/header-background.png');*/
       background: url("<?php echo get_template_directory_child().'/inc/img/background/header-background.png'; ?>");
       border-bottom: 0 none !important;
       padding: 10px 0;
     }
     .footer-inner{
-      background: #191919 url("http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/footer_background.png") repeat-x scroll center top;
+      background: #191919 url("<?php echo get_template_directory_child().'/inc/img/background/footer_background.png'; ?>") repeat-x scroll center top;
       border: medium none;
       padding: 50px 0;
     }
@@ -217,13 +226,13 @@ function mksystem_header_styles() {
     }
     .navbar-default .navbar-nav > li > a.social-icon:hover, 
     .footer_social-wrapper a:hover{
-      background: #ffc700 !important;
+      background: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
     }
     .woocommerce #respond input#submit.alt, 
     .woocommerce a.button.alt, 
     .woocommerce button.button.alt, 
     .woocommerce input.button.alt{
-      background-color: #FFC700 !important;
+      background-color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
       color: #000 !important;
     }
     .woocommerce #respond input#submit.alt:hover, 
@@ -234,7 +243,7 @@ function mksystem_header_styles() {
       color: #fff !important;
     }
     .btn-quote{
-      background-color: #ffc700;
+      background-color: <?php echo get_theme_mod('color_mksystem_theme'); ?>;
       color: #000;
       font-weight: 600 !important;
       height: 31px;
@@ -246,17 +255,17 @@ function mksystem_header_styles() {
       color: #fff;
     }
     .scroll-to-top:hover{
-      background: #ffc700 !important;
+      background: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
     }
     .cfa{
-      background: #FFC700 !important;
+      background: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
     }
     .content-map-text p{
-      color: #FFC700;
+      color: <?php echo get_theme_mod('color_mksystem_theme'); ?>;
       font: 700 25px/25px Lato;
     }
     .copy-right a{
-      color: #FFC700 !important;
+      color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
     }
     .btn-theme{
       background-color: #e7c01b;
@@ -267,6 +276,15 @@ function mksystem_header_styles() {
     }
     .main-content-area{
       background: <?php echo get_theme_mod('color_mksystem_fondo'); ?>;
+    }
+    .btn-default, .label-default, 
+    .woocommerce #respond input#submit, 
+    .woocommerce a.button, 
+    .woocommerce button.button, 
+    .woocommerce input.button{
+      background-color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
+      border-color: <?php echo get_theme_mod('color_mksystem_theme'); ?> !important;
+      color: #000 !important;
     }
   </style>
 <?php
@@ -350,7 +368,11 @@ function mksystem_call_for_action() {
 /**
  * Get all categories
  */
-function mksystem_product_categories(){
+function mksystem_product_categories($thumb = ''){
+
+  // shop_thumbnail
+  // shop_catalog
+  // shop_single
 
   $taxonomy     = 'product_cat';
   $orderby      = 'name';  
@@ -376,6 +398,14 @@ function mksystem_product_categories(){
   foreach ($all_categories as $cat) {
     if($cat->category_parent == 0) {
 
+      $cat_thumb_id = get_woocommerce_term_meta($cat->term_id, 'thumbnail_id', true);
+      if($thumb === ''){
+        $cat_thumb_url = wp_get_attachment_thumb_url($cat_thumb_id);
+      }else{
+        $cat_thumb_url_ = wp_get_attachment_image_src($cat_thumb_id, $thumb);
+        $cat_thumb_url = $cat_thumb_url_[0];
+      }
+
       $term_link = get_term_link($cat, 'product_cat');
 
       $category_products[$cat->term_id]['id'] = $cat->term_id;
@@ -384,6 +414,8 @@ function mksystem_product_categories(){
       $category_products[$cat->term_id]['taxonomy'] = $cat->taxonomy;
       $category_products[$cat->term_id]['count'] = $cat->count;
       $category_products[$cat->term_id]['description'] = $cat->description;
+
+      $category_products[$cat->term_id]['thumb_url'] = $cat_thumb_url;
       $category_products[$cat->term_id]['term_link'] = $term_link;
 
       $category_products[$cat->term_id]['childs'] = array();
@@ -410,6 +442,13 @@ function mksystem_product_categories(){
     $i = 0;
     foreach ($subcategory as $subcat) {
 
+      $cat_thumb_id = get_woocommerce_term_meta($subcat->term_id, 'thumbnail_id', true);
+      if($thumb === ''){
+        $cat_thumb_url = wp_get_attachment_thumb_url($cat_thumb_id);
+      }else{
+        $cat_thumb_url_ = wp_get_attachment_image_src($cat_thumb_id, $thumb);
+        $cat_thumb_url = $cat_thumb_url_[0];
+      }
       $term_link = get_term_link($subcat, 'product_cat');
 
       $category_products[$subcat->parent]['childs'][$i]['id'] = $subcat->term_id;
@@ -418,6 +457,8 @@ function mksystem_product_categories(){
       $category_products[$subcat->parent]['childs'][$i]['taxonomy'] = $subcat->taxonomy;
       $category_products[$subcat->parent]['childs'][$i]['count'] = $subcat->count;
       $category_products[$subcat->parent]['childs'][$i]['description'] = $subcat->description;
+
+      $category_products[$subcat->parent]['childs'][$i]['thumb_url'] = $cat_thumb_url;
       $category_products[$subcat->parent]['childs'][$i]['term_link'] = $term_link;
       $i++;
     }//end foreach
@@ -465,7 +506,7 @@ function mksystem_categories_list_footer(){
     $categories_html .= '<ul class="nav footer-nav clearfix">';
     foreach ($category_products as $category) {
       if($items <= 9){
-        $categories_html .= '<li class="menu-item"><a href="'.home_url('/product-category/'.$category['slug']).'">'.$category['name'].'</a></li>';
+        $categories_html .= '<li class="menu-item"><a href="'.$category['term_link'].'">'.$category['name'].'</a></li>';
       }//end if
       $items++;
     }//end foreach
@@ -568,7 +609,7 @@ function mksystem_customizer_register( $wp_customize ) {
   * Imagen de cabecera y pie de pagina
   */
   $wp_customize->add_setting('imagen_mksystem_pie_pagina',array(
-    'default' => get_template_directory_child().'http://newenergy.mksystemgroup.com/wp-content/uploads/2016/08/cropped-logo-1.png'
+    'default' => ''
   ));
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'imagen_mksystem_pie_pagina' , array(
     'label' => __('Pie de página' , 'mksystem'),
@@ -642,20 +683,212 @@ function mksystem_customizer_register( $wp_customize ) {
     'setting' => 'social_vimeo',
     'type'    => 'text'
   ));
-  $wp_customize->add_setting('check_socialhide',array(
-      'default' => true
-  ));
-  $wp_customize->add_control( 'check_socialhide', array(
-       'settings' => 'check_socialhide',
-         'section'   => 'social_links',
-         'label'     => __('Uncheck This Option To Display This Section','mksystem'),
-         'type'      => 'checkbox'
-    ));
 
-  // $wp_customize->remove_section('dazzling_important_links');
-  // $wp_customize->remove_panel('widgets');
-    
+  /*
+  *
+  * Publicidad 
+  *
+  */
+  $wp_customize->add_section(
+        'mksystem_publicidad',
+        array(
+            'title' => __('Publicidad', 'mksystem'),
+            'priority' => 100
+        )
+    );
+  $wp_customize->add_setting('Texto_1',array(
+    'default' => __('Power Tools','mksystem')
+  ));
+  $wp_customize->add_control('Texto_1',array(
+    'label' => __('Texto 1','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Texto_1',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Texto_2',array(
+    'default' => __('20% off','mksystem')
+  ));
+  $wp_customize->add_control('Texto_2',array(
+    'label' => __('Texto 2','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Texto_2',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Descripcion',array(
+    'default' => __('Descripción','mksystem')
+  ));
+  $wp_customize->add_control('Descripcion',array(
+    'label' => __('Descripción','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Descripcion',
+    'type'    => 'textarea'
+  ));
+  $wp_customize->add_setting('Imagen_1',array(
+    'default' => ''
+  ));
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'Imagen_1' , array(
+    'label' => __('Imagen 1' , 'mksystem'),
+    'section' => 'mksystem_publicidad',
+    'settings' => 'Imagen_1'
+  )));
+
+
+  $wp_customize->add_setting('Texto_1b',array(
+    'default' => __('Power Tools','mksystem')
+  ));
+  $wp_customize->add_control('Texto_1b',array(
+    'label' => __('Texto 1','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Texto_1b',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Texto_2b',array(
+    'default' => __('20% off','mksystem')
+  ));
+  $wp_customize->add_control('Texto_2b',array(
+    'label' => __('Texto 2','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Texto_2b',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Descripcionb',array(
+    'default' => __('Descripcion','mksystem')
+  ));
+  $wp_customize->add_control('Descripcionb',array(
+    'label' => __('Descripción','mksystem'),
+    'section' => 'mksystem_publicidad',
+    'setting' => 'Descripcionb',
+    'type'    => 'textarea'
+  ));
+  $wp_customize->add_setting('Imagen_2',array(
+    'default' => ''
+  ));
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'Imagen_2' , array(
+    'label' => __('Imagen 2' , 'mksystem'),
+    'section' => 'mksystem_publicidad',
+    'settings' => 'Imagen_2'
+  )));
+
+  /*
+  *
+  * Contactos
+  *
+  */
+  $wp_customize->add_section(
+        'mksystem_contacto',
+        array(
+            'title' => __('Contactos', 'mksystem'),
+            'priority' => 100
+        )
+    );
+  $wp_customize->add_setting('direccion',array(
+    'default' => __('Jr. Paruro N° 1132 - Lima','mksystem')
+  ));
+  $wp_customize->add_control('direccion',array(
+    'label' => __('Dirección','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'direccion',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('telefono1',array(
+    'default' => __('(+51) 234-5678','mksystem')
+  ));
+  $wp_customize->add_control('telefono1',array(
+    'label' => __('Teléfono','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'telefono1',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('telefono2',array(
+    'default' => __('(+51) 234-5678','mksystem')
+  ));
+  $wp_customize->add_control('telefono2',array(
+    'label' => __('Teléfono','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'telefono2',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('email',array(
+    'default' => __('informes@ejemplo.com','mksystem')
+  ));
+  $wp_customize->add_control('email',array(
+    'label' => __('Email','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'email',
+    'type'    => 'text'
+  ));
+
+  $wp_customize->add_setting('Mapa',array(
+    'default' => __('informes@ejemplo.com','mksystem')
+  ));
+  $wp_customize->add_control('Mapa',array(
+    'label' => __('Mapa','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'Mapa',
+    'type'    => 'textarea'
+  ));
+
+   $wp_customize->add_setting('texto_cabecera',array(
+    'default' => __('Texto por defecto','mksystem')
+  ));
+  $wp_customize->add_control('texto_cabecera',array(
+    'label' => __('Texto de Cabecera','mksystem'),
+    'section' => 'mksystem_contacto',
+    'setting' => 'texto_cabecera',
+    'type'    => 'textarea'
+  ));
+
+
 }
 
 
- add_action('customize_register','mksystem_customizer_register');
+add_action('customize_register','mksystem_customizer_register');
+
+
+function get_url_shop(){
+  $shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ));
+  return $shop_page_url;
+}
+
+
+function mksystem_categories_list_page(){
+  $categories_html = '';
+  $category_products = mksystem_product_categories('catalog');
+  if(count($category_products) > 0){
+    foreach ($category_products as $category) {
+      
+      $thumb_url = ($category['thumb_url'] == '') ? get_template_directory_child().'/inc/img/categorias/default_400x400.jpg' : $category['thumb_url'];
+
+      $categories_html .= '<div class="col-md-3 col-sm-3 col-xs-6 text-center">';
+      $categories_html .= '<a href="'.$category['term_link'].'" title="'.$category['name'].'" class="thumbnail">';
+      $categories_html .= '<img src="'.$thumb_url.'">';
+      $categories_html .= '</a>';
+      $categories_html .= '<h4>'.$category['name'].'</h4>';
+      $categories_html .= '</div>';
+
+      if(count($category['childs']) > 0){
+        foreach ($category['childs'] as $subcategory) {
+
+          $thumb_url = ($subcategory['thumb_url'] == '') ? get_template_directory_child().'/inc/img/categorias/default_400x400.jpg' : $subcategory['thumb_url'];
+
+          $categories_html .= '<div class="col-md-3 col-sm-3 col-xs-6 text-center">';
+          $categories_html .= '<a href="'.$subcategory['term_link'].'" title="'.$subcategory['name'].'" class="thumbnail">';
+          $categories_html .= '<img src="'.$thumb_url.'">';
+          $categories_html .= '</a>';
+          $categories_html .= '<h4>'.$subcategory['name'].'</h4>';
+          $categories_html .= '</div>';
+        }//end foreach
+      }//end if
+
+    }//end foreach
+  }//end if
+
+  echo $categories_html;
+}

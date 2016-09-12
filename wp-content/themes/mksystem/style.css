@@ -97,7 +97,7 @@ ul#menu-principal > li > a{
 }
 .banners_wrapper .banner-wrap{
   background: #000;
-  display: block;
+  display: inline-block;
   margin: 0;
   position: relative;
 }
@@ -156,13 +156,14 @@ body #motopress-main.main-holder .content-holder a:active{
   padding: 0;
 }
 .banners_wrapper .banner-wrap .featured-thumbnail img{
+  height: 100%;
   transition: all 300ms ease 0s;
 }
 .banner_content p{
   font-size: 12px;
 }
-.banners_wrapper .banner-wrap.left-image .featured-thumbnail{
-  /*float: left;*/
+.banners_wrapper .banner-wrap.left-image{
+  margin-top: -8px;
 }
 .banners_wrapper .banner-wrap.left-image .banner_content{
   float: right;
@@ -174,7 +175,8 @@ body #motopress-main.main-holder .content-holder a:active{
 .banners_wrapper .banner-wrap:hover .banner_content h4{ color: #fff; }
 .banners_wrapper .banner-wrap:hover .banner_content p{ color: #ffc700; }
 .banners_wrapper .banners_wrapper_wrap_inner .banner-wrap{
-  max-height: 282px;
+  height: 285px;
+  width: 100%;
 }
 
 .featured-products_wrapper h2{
@@ -236,6 +238,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .sm_submit, #sm_submit{
   background-color: #292929 !important;
   border-radius: 0;
+  color: #fff !important;
   padding: 5px 25px !important;
   vertical-align: top;
 }
@@ -311,11 +314,54 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 {
   display: none;
 }
+.content-map iframe{
+  width: 100%;
+}
+.category-product.nav{
+  margin-bottom: 30px;
+}
 
+/* widget quotelist */
+.quotelist-section{
+  background: transparent;
+  display: none;
+  padding: 5px 3px;
+  position: absolute;
+  right: -1px;
+  z-index: -1;
+}
+.quotelist-section > #quotelist-widget{
+  background: #000;
+  padding: 20px;
+  width: 280px;
+}
+.quotelist-section.active, 
+.quotelist-section:hover{
+  display: block;
+  z-index: 1000;
+}
+#quotelist-widget ul.product_list_widget > li > a{
+  color: #fff;
+  font-size: 11px;
+}
+.navbar-mksystem ul.product_list_widget > li > a:hover{
+  background: #000 !important;
+  color: #FFD800 !important;
+}
+
+.entry-title{
+  font-size: 18px;
+}
+.woocommerce-info{
+  border-top-color: #000;
+}
+.woocommerce-info::before{
+  color: #000;
+}
 
 /*  Media queries */
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1200px){
   ul#menu-principal > li > a {
     padding-left: 6px;
     padding-right: 13px;
@@ -344,11 +390,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .social-icon {
     border-radius: 100%;
   }
+/*  .banners_wrapper .banner-wrap .banner_content{
+    width: 50%;
+  }*/
 }
 
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 990px){
 
   .social-icon {
     width: 47px ;
@@ -367,12 +416,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .navbar-nav > li {
     margin: 0 0px;
   }
-  .social-icon {
-    width: 39px;
-  }
   .navbar-nav > li > a {
     line-height: 9px;
   }
+<<<<<<< HEAD
   .content-area {
     margin-bottom: 15px; 
   }
@@ -388,17 +435,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .social-icon {
     width: 45px;
   }
+=======
+  .woo-menu-cart{
+    display: none !important;
+  }
+>>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
 
 }
 
-/* cambios iniciales de desarrollooo 1*/
-@media screen and (max-width: 736px){
+@media screen and (max-width: 767px){
   .navbar-toggle {
     border: 1px solid #888 ;
   }
   .icon-bar {
     background-color: #888 ;
   }
+}
+@media screen and (max-width: 736px){
   .navbar-nav > li > a {
     padding-bottom: 15px;
     padding-top: 15px;
@@ -408,11 +461,28 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     padding: 7px !important;
   }
   #logo img{
+<<<<<<< HEAD
       max-width: 120px;
+=======
+    max-width: 200px;
+  }
+
+}
+@media screen and (max-width: 667px){
+  .banner_content h4 {
+    font: 700 42px/53px Lato!important;
+  }
+  .banner_content h5 {
+    font: 100 43px/37px Lato!important;
+  }
+  .banner_content {
+    padding: 4px !important;
+>>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
   }
 
 }
 
+<<<<<<< HEAD
 
 /* cambios iniciales de desarrollo 1*/
 @media screen and (max-width: 667px){
@@ -421,6 +491,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
 
   }
+=======
+>>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
 @media screen and (max-width: 600px){
   .navbar-toggle {
     border: 1px solid #888 ;
@@ -436,7 +508,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
    padding-top: 15px;
   }
   .social-icon {
+<<<<<<< HEAD
     width: 38px;
+=======
+    width: 40px;
+>>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
   }
   .banner_content h5 {
       font: 100 28px/24px Lato!important;;
@@ -450,16 +526,43 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .banner_content {
       padding: 9px !important;
   }
+<<<<<<< HEAD
   
+=======
+  #logo img{
+      max-width: 120px;
+  }
+>>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
   .navbar-nav > li > a {
     padding-bottom: 15px;
     padding-top: 15px;
     padding: 10px;
   }
+<<<<<<< HEAD
   #header_page span {
     font-size: 12px;
+=======
+  .banners_wrapper .banners_wrapper_wrap_inner .banner-wrap{
+    height: 240px;
   }
 
+}
+@media screen and (max-width: 568px){
+  .banner_content {
+    padding: 4px !important;
+  }
+  .footer_social-wrapper a {
+    font-size: 18px;
+>>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
+  }
+
+}
+
+@media screen and (max-width: 480px){
+  .banners_wrapper_wrap_inner .banner-wrap.right-image,
+  .banners_wrapper_wrap_inner .banner-wrap.left-image{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 414px){
@@ -512,10 +615,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .header-page {
     display: none;
   }
-
   .banners_wrapper {
     display: none;
   }
+<<<<<<< HEAD
   .sm_field, .sm_submit, #sm_submit {
     width: 100% !important;
     margin-left:0 !important;
@@ -525,6 +628,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
   .site-info {
     font-size: 9px;
+=======
+  #sm_form .sm_field, 
+  #sm_form .sm_submit{
+    margin-left: 0 !important;
+    width: 100% !important;
+    text-align: center;
+>>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
   }
 }
 @media screen and (max-width: 240px){
@@ -554,8 +664,4 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 
   }*/
   }
-}
-
-
-
-
+} 

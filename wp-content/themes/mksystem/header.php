@@ -29,7 +29,9 @@
 				<nav id="header_page" class="navbar navbar-default header-page">
 					<div class="col-md-7 col-sm-7 col-xs-12">
 						<span style="color:#fff;">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+							<?php if ( get_theme_mod('texto_cabecera', '') != '' ){ ?>
+	                        <?php echo  get_theme_mod('texto_cabecera', ''); ?>
+	                        <?php } ?>
 						</span>
 			  		</div>
 					<div class="col-md-5 col-sm-5 col-xs-12">
@@ -113,7 +115,10 @@
 
 					</div>
 					<div class="col-md-10 col-sm-10 col-xs-12">
-						<?php mksystem_header_menu(); ?>	
+						<?php mksystem_header_menu(); ?>
+						<div class="quotelist-section">
+							<div id="quotelist-widget"></div>
+						</div>
 					</div>
 				</nav><!--.nav-->
 
