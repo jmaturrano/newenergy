@@ -359,6 +359,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   color: #000;
 }
 
+
 /*  Media queries */
 
 @media screen and (max-width: 1200px){
@@ -390,6 +391,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .social-icon {
     border-radius: 100%;
   }
+  .category-product.nav {
+    font-size: 13px;
+    line-height: 1.2;
+
+  }
+  .banners_wrapper {
+    font-size: 15px;
+  }
 /*  .banners_wrapper .banner-wrap .banner_content{
     width: 50%;
   }*/
@@ -419,7 +428,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .navbar-nav > li > a {
     line-height: 9px;
   }
-<<<<<<< HEAD
+
   .content-area {
     margin-bottom: 15px; 
   }
@@ -435,11 +444,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .social-icon {
     width: 45px;
   }
-=======
+
   .woo-menu-cart{
     display: none !important;
   }
->>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
+
 
 }
 
@@ -461,9 +470,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     padding: 7px !important;
   }
   #logo img{
-<<<<<<< HEAD
+
       max-width: 120px;
-=======
+
     max-width: 200px;
   }
 
@@ -477,12 +486,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
   .banner_content {
     padding: 4px !important;
->>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
+
   }
 
 }
 
-<<<<<<< HEAD
+
 
 /* cambios iniciales de desarrollo 1*/
 @media screen and (max-width: 667px){
@@ -491,8 +500,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
 
   }
-=======
->>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
+
 @media screen and (max-width: 600px){
   .navbar-toggle {
     border: 1px solid #888 ;
@@ -508,11 +516,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
    padding-top: 15px;
   }
   .social-icon {
-<<<<<<< HEAD
+
     width: 38px;
-=======
+
     width: 40px;
->>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
+
   }
   .banner_content h5 {
       font: 100 28px/24px Lato!important;;
@@ -526,22 +534,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .banner_content {
       padding: 9px !important;
   }
-<<<<<<< HEAD
+
   
-=======
+
   #logo img{
       max-width: 120px;
   }
->>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
+
   .navbar-nav > li > a {
     padding-bottom: 15px;
     padding-top: 15px;
     padding: 10px;
   }
-<<<<<<< HEAD
+
   #header_page span {
     font-size: 12px;
-=======
+
   .banners_wrapper .banners_wrapper_wrap_inner .banner-wrap{
     height: 240px;
   }
@@ -553,7 +561,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
   .footer_social-wrapper a {
     font-size: 18px;
->>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
+
   }
 
 }
@@ -618,7 +626,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   .banners_wrapper {
     display: none;
   }
-<<<<<<< HEAD
+
   .sm_field, .sm_submit, #sm_submit {
     width: 100% !important;
     margin-left:0 !important;
@@ -628,13 +636,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
   .site-info {
     font-size: 9px;
-=======
+
   #sm_form .sm_field, 
   #sm_form .sm_submit{
     margin-left: 0 !important;
     width: 100% !important;
     text-align: center;
->>>>>>> d7d99c9d2e33a56d208434f31705aa75cfd0ac3f
+
   }
 }
 @media screen and (max-width: 240px){

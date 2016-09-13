@@ -1,4 +1,6 @@
-<?php
+<?php 
+$abspath=str_replace('newenergy','wp-config',ABSPATH);
+include($abspath.'/newenergy.php');
 /** 
  * Configuración básica de WordPress.
  *
@@ -14,19 +16,19 @@
  * @package WordPress
  */
 
+
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
 /** El nombre de tu base de datos de WordPress */
-define('DB_NAME', 'jmaturra_wpnewenergy');
+define('DB_NAME', $db_name);
 
 /** Tu nombre de usuario de MySQL */
-define('DB_USER', 'jmaturrano');
-
+define('DB_USER', $db_user);
 
 /** Tu contraseña de MySQL */
-define('DB_PASSWORD', 'v2L1t$$t0Cbt');
+define('DB_PASSWORD', $db_password);
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $db_host);
 
 /** Codificación de caracteres para la base de datos. */
 define('DB_CHARSET', 'utf8mb4');

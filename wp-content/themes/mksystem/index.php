@@ -15,7 +15,7 @@
 ?>
 
 
-<div class="top-section">
+<div class="top-section" style= "display:none;">
     <div class="container">
         <div class="row">
             <?php mksystem_featured_slider(); ?>
@@ -46,7 +46,8 @@
                     <?php mksystem_categories_list_html(); ?>
                 </div>
                 <div class="col-md-9 col-sm-12">
-                    <div class="banners_wrapper">
+                         <?php mksystem_featured_slider(); ?>
+                    <div class="banners_wrapper" style="display:none;">
                         <div class="banners_wrapper_wrap_inner">
                             <a class="banner-wrap right-image" href="<?= get_url_shop(); ?>">
                                 <figure class="featured-thumbnail">

@@ -472,21 +472,29 @@ function mksystem_product_categories($thumb = ''){
  * Get all categories
  */
 function mksystem_categories_list_html(){
+  $i=0;
   $categories_html = '';
   $category_products = mksystem_product_categories();
   if(count($category_products) > 0){
     $categories_html .= '<ul class="category-product nav">';
     foreach ($category_products as $category) {
-      $span = (count($category['childs'])>0) ? '<span class="icon-subcategory glyphicon glyphicon-plus"></span>' : '';
-      $categories_html .= '<li>'.$span.'<a href="'.$category['term_link'].'">'.$category['name'].'</a></li>';
-      if(count($category['childs']) > 0){
-        $categories_html .= '<ul class="subcategory-product nav">';
-        foreach ($category['childs'] as $subcategory) {
-          // $categories_html .= '<li><a href="'.home_url('/product-category/'.$subcategory['slug']).'"> > '.$subcategory['name'].'</li>';
-          $categories_html .= '<li><a href="'.$subcategory['term_link'].'"> > '.$subcategory['name'].'</li>';
-        }//end foreach
-        $categories_html .= '</ul>';
-      }//end fi
+
+      if($i<11){
+
+        $span = (count($category['childs'])>0) ? '<span class="icon-subcategory glyphicon glyphicon-plus"></span>' : '';
+        $categories_html .= '<li>'.$span.'<a href="'.$category['term_link'].'">'.$category['name'].'</a></li>';
+        if(count($category['childs']) > 0){
+          $categories_html .= '<ul class="subcategory-product nav">';
+          foreach ($category['childs'] as $subcategory) {
+            // $categories_html .= '<li><a href="'.home_url('/product-category/'.$subcategory['slug']).'"> > '.$subcategory['name'].'</li>';
+            $categories_html .= '<li><a href="'.$subcategory['term_link'].'"> > '.$subcategory['name'].'</li>';
+          }//end foreach
+          $categories_html .= '</ul>';
+        }//end fi
+
+      }//end if 
+
+      $i++;
     }//end foreach
     $categories_html .= '</ul>';
   }//end if
