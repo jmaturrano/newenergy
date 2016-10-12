@@ -1,6 +1,6 @@
 <?php 
-$abspath=str_replace('newenergy','wp-config',ABSPATH);
-include($abspath.'/newenergy.php');
+$abspath	=	str_replace(array('\newenergy', '/newenergy'),'/wp-config',ABSPATH);
+include($abspath.'/server.php');
 /** 
  * Configuración básica de WordPress.
  *
@@ -19,22 +19,45 @@ include($abspath.'/newenergy.php');
 
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
 /** El nombre de tu base de datos de WordPress */
-define('DB_NAME', $db_name);
+define('DB_NAME', $server['database']['newenergy']);
 
 /** Tu nombre de usuario de MySQL */
-define('DB_USER', $db_user);
+define('DB_USER', $server['main']['user']);
 
 /** Tu contraseña de MySQL */
-define('DB_PASSWORD', $db_password);
+define('DB_PASSWORD', $server['main']['pass']);
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
-define('DB_HOST', $db_host);
+define('DB_HOST', $server['main']['host']);
 
 /** Codificación de caracteres para la base de datos. */
 define('DB_CHARSET', 'utf8mb4');
 
 /** Cotejamiento de la base de datos. No lo modifiques si tienes dudas. */
 define('DB_COLLATE', '');
+
+
+
+
+/** Lenguaje de wordpress **/
+define('WPLANG', 'es_PE');
+/** Revisiones de POSTS **/
+define('WP_POST_REVISIONS', 5);
+/** Auto guardado de POSTS **/
+define('WP_POST_REVISIONS', false);
+/** Guardar las consultas en una constante **/
+define('SAVEQUERIES', true );
+/** Desactivar las actualizaciones automáticas **/
+define('AUTOMATIC_UPDATER_DISABLED', true);
+define('WP_AUTO_UPDATE_CORE', false);
+/** Desactivar el editor de temas y plugins **/
+define('DISALLOW_FILE_EDIT', true);
+/** Desactivar la instalación de temas y plugins **/
+//define('DISALLOW_FILE_MODS', true);
+/** No usar las versiones minificadas **/
+define('CONCATENATE_SCRIPTS', false);
+
+
 
 /**#@+
  * Claves únicas de autentificación.
